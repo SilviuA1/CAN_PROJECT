@@ -13215,3 +13215,38 @@ Caused by: java.io.IOException: Document is closed
 
 !ENTRY com.nxp.mcuxpresso.core.debug 1 0 2021-01-24 22:17:40.658
 !MESSAGE Telnet session connected on port 3330->45770 @ 127.0.0.1
+
+!ENTRY com.crt.log 1 0 2021-01-24 22:37:45.257
+!MESSAGE Trying to connect to redlink server on port 3025.
+
+!ENTRY com.nxp.mcuxpresso.core.debug.support.linkserver 1 0 2021-01-24 22:37:46.259
+!MESSAGE RedlinkServer telnet session connected on port 3025->46784 @ 127.0.0.1
+
+!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2021-01-24 22:37:49.875
+!MESSAGE Telnet session connected on port 3330->45936 @ 127.0.0.1
+
+!ENTRY com.crt.log 1 0 2021-01-24 22:38:16.578
+!MESSAGE Trying to connect to redlink server on port 3025.
+
+!ENTRY com.nxp.mcuxpresso.core.debug.support.linkserver 1 0 2021-01-24 22:38:17.579
+!MESSAGE RedlinkServer telnet session connected on port 3025->46796 @ 127.0.0.1
+
+!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2021-01-24 22:38:21.076
+!MESSAGE Telnet session connected on port 3330->45948 @ 127.0.0.1
+
+!ENTRY com.crt.log 1 0 2021-01-24 22:38:58.636
+!MESSAGE Trying to connect to redlink server on port 3025.
+
+!ENTRY com.nxp.mcuxpresso.core.debug.support.linkserver 1 0 2021-01-24 22:38:59.638
+!MESSAGE RedlinkServer telnet session connected on port 3025->46808 @ 127.0.0.1
+
+!ENTRY com.nxp.mcuxpresso.core.debug 4 0 2021-01-24 22:39:00.966
+!MESSAGE There is already a running debug session for the launch configuration 'nxp_lpcxpresso_11c24_freertos_blinky LinkServer Debug'.
+
+!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2021-01-24 22:39:03.843
+!MESSAGE Telnet session connected on port 3330->45960 @ 127.0.0.1
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2021-01-24 22:39:20.928
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.concurrent.ImmediateRequestMonitor@34b49369): Status ERROR: org.eclipse.cdt.dsf.gdb code=10003 Invalid context type. null' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10003 2021-01-24 22:39:20.928
+!MESSAGE Invalid context type.

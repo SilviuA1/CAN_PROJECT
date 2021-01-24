@@ -1,31 +1,38 @@
-22:33:15 **** Build of configuration Debug for project nxp_lpcxpresso_11c24_freertos_blinky ****
+22:38:54 **** Build of configuration Debug for project nxp_lpcxpresso_11c24_freertos_blinky ****
 make -r -j12 all 
 Building file: ../freertos/src/FreeRTOSCommonHooks.c
 Building file: ../freertos/src/croutine.c
 Building file: ../freertos/src/heap_1.c
+Building file: ../freertos/src/list.c
 Invoking: MCU C Compiler
 Invoking: MCU C Compiler
 arm-none-eabi-gcc -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M0 -DSDK_DEBUGCONSOLE=1 -D__NEWLIB__ -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/freertos/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/CAN" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/UART" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fmerge-constants -fmacro-prefix-map="../freertos/src/"=. -mcpu=cortex-m0 -mthumb -D__NEWLIB__ -fstack-usage -specs=nano.specs -MMD -MP -MF"freertos/src/FreeRTOSCommonHooks.d" -MT"freertos/src/FreeRTOSCommonHooks.o" -MT"freertos/src/FreeRTOSCommonHooks.d" -o "freertos/src/FreeRTOSCommonHooks.o" "../freertos/src/FreeRTOSCommonHooks.c"
-Building file: ../freertos/src/list.c
+Building file: ../freertos/src/port.c
 arm-none-eabi-gcc -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M0 -DSDK_DEBUGCONSOLE=1 -D__NEWLIB__ -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/freertos/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/CAN" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/UART" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fmerge-constants -fmacro-prefix-map="../freertos/src/"=. -mcpu=cortex-m0 -mthumb -D__NEWLIB__ -fstack-usage -specs=nano.specs -MMD -MP -MF"freertos/src/croutine.d" -MT"freertos/src/croutine.o" -MT"freertos/src/croutine.d" -o "freertos/src/croutine.o" "../freertos/src/croutine.c"
 Invoking: MCU C Compiler
+Invoking: MCU C Compiler
 arm-none-eabi-gcc -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M0 -DSDK_DEBUGCONSOLE=1 -D__NEWLIB__ -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/freertos/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/CAN" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/UART" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fmerge-constants -fmacro-prefix-map="../freertos/src/"=. -mcpu=cortex-m0 -mthumb -D__NEWLIB__ -fstack-usage -specs=nano.specs -MMD -MP -MF"freertos/src/heap_1.d" -MT"freertos/src/heap_1.o" -MT"freertos/src/heap_1.d" -o "freertos/src/heap_1.o" "../freertos/src/heap_1.c"
-Invoking: MCU C Compiler
 arm-none-eabi-gcc -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M0 -DSDK_DEBUGCONSOLE=1 -D__NEWLIB__ -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/freertos/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/CAN" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/UART" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fmerge-constants -fmacro-prefix-map="../freertos/src/"=. -mcpu=cortex-m0 -mthumb -D__NEWLIB__ -fstack-usage -specs=nano.specs -MMD -MP -MF"freertos/src/list.d" -MT"freertos/src/list.o" -MT"freertos/src/list.d" -o "freertos/src/list.o" "../freertos/src/list.c"
-Building file: ../freertos/src/port.c
-Building file: ../freertos/src/queue.c
-Building file: ../freertos/src/tasks.c
-Invoking: MCU C Compiler
 Invoking: MCU C Compiler
 arm-none-eabi-gcc -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M0 -DSDK_DEBUGCONSOLE=1 -D__NEWLIB__ -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/freertos/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/CAN" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/UART" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fmerge-constants -fmacro-prefix-map="../freertos/src/"=. -mcpu=cortex-m0 -mthumb -D__NEWLIB__ -fstack-usage -specs=nano.specs -MMD -MP -MF"freertos/src/port.d" -MT"freertos/src/port.o" -MT"freertos/src/port.d" -o "freertos/src/port.o" "../freertos/src/port.c"
-In file included from /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/inc/chip.h:232,
+Building file: ../freertos/src/queue.c
+Invoking: MCU C Compiler
+Building file: ../freertos/src/tasks.c
 arm-none-eabi-gcc -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M0 -DSDK_DEBUGCONSOLE=1 -D__NEWLIB__ -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/freertos/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/CAN" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/UART" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fmerge-constants -fmacro-prefix-map="../freertos/src/"=. -mcpu=cortex-m0 -mthumb -D__NEWLIB__ -fstack-usage -specs=nano.specs -MMD -MP -MF"freertos/src/queue.d" -MT"freertos/src/queue.o" -MT"freertos/src/queue.d" -o "freertos/src/queue.o" "../freertos/src/queue.c"
+In file included from /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/inc/chip.h:232,
                  from /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/inc/board.h:35,
                  from /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/inc/FreeRTOSConfig.h:60,
                  from /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/freertos/inc/FreeRTOS.h:88,
                  from ../freertos/src/croutine.c:75:
 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/inc/pmu_11xx.h:49:8: warning: missing terminating " character
-Invoking: MCU C Compiler
+   49 | #error "LPC1125 support for the PMU driver is not ready
+      |        ^
+In file included from /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/inc/chip.h:232,
+                 from /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/inc/board.h:35,
+                 from /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/inc/FreeRTOSConfig.h:60,
+                 from /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/freertos/inc/FreeRTOS.h:88,
+                 from ../freertos/src/port.c:80:
+/home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/inc/pmu_11xx.h:49:8: warning: missing terminating " character
    49 | #error "LPC1125 support for the PMU driver is not ready
       |        ^
 In file included from /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/inc/chip.h:232,
@@ -44,17 +51,15 @@ In file included from /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_c
 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/inc/pmu_11xx.h:49:8: warning: missing terminating " character
    49 | #error "LPC1125 support for the PMU driver is not ready
       |        ^
+Building file: ../freertos/src/timers.c
+Building file: ../example/src/cr_startup_lpc11xx.c
+Invoking: MCU C Compiler
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M0 -DSDK_DEBUGCONSOLE=1 -D__NEWLIB__ -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/freertos/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/CAN" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/UART" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fmerge-constants -fmacro-prefix-map="../freertos/src/"=. -mcpu=cortex-m0 -mthumb -D__NEWLIB__ -fstack-usage -specs=nano.specs -MMD -MP -MF"freertos/src/tasks.d" -MT"freertos/src/tasks.o" -MT"freertos/src/tasks.d" -o "freertos/src/tasks.o" "../freertos/src/tasks.c"
 In file included from /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/inc/chip.h:232,
                  from /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/inc/board.h:35,
                  from /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/inc/FreeRTOSConfig.h:60,
-                 from /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/freertos/inc/FreeRTOS.h:88,
-                 from ../freertos/src/port.c:80:
-/home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/inc/pmu_11xx.h:49:8: warning: missing terminating " character
-   49 | #error "LPC1125 support for the PMU driver is not ready
-      |        ^
-In file included from /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/inc/chip.h:232,
-                 from /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/inc/board.h:35,
-                 from /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/inc/FreeRTOSConfig.h:60,
+Invoking: MCU C Compiler
                  from /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/freertos/inc/FreeRTOS.h:88,
                  from ../freertos/src/list.c:77:
 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/inc/pmu_11xx.h:49:8: warning: missing terminating " character
@@ -68,16 +73,7 @@ In file included from /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_c
 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/inc/pmu_11xx.h:49:8: warning: missing terminating " character
    49 | #error "LPC1125 support for the PMU driver is not ready
       |        ^
-arm-none-eabi-gcc -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M0 -DSDK_DEBUGCONSOLE=1 -D__NEWLIB__ -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/freertos/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/CAN" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/UART" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fmerge-constants -fmacro-prefix-map="../freertos/src/"=. -mcpu=cortex-m0 -mthumb -D__NEWLIB__ -fstack-usage -specs=nano.specs -MMD -MP -MF"freertos/src/tasks.d" -MT"freertos/src/tasks.o" -MT"freertos/src/tasks.d" -o "freertos/src/tasks.o" "../freertos/src/tasks.c"
-Building file: ../freertos/src/timers.c
-Building file: ../example/src/cr_startup_lpc11xx.c
-Building file: ../example/src/freertos_blinky.c
-Invoking: MCU C Compiler
-Invoking: MCU C Compiler
 arm-none-eabi-gcc -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M0 -DSDK_DEBUGCONSOLE=1 -D__NEWLIB__ -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/freertos/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/CAN" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/UART" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fmerge-constants -fmacro-prefix-map="../freertos/src/"=. -mcpu=cortex-m0 -mthumb -D__NEWLIB__ -fstack-usage -specs=nano.specs -MMD -MP -MF"freertos/src/timers.d" -MT"freertos/src/timers.o" -MT"freertos/src/timers.d" -o "freertos/src/timers.o" "../freertos/src/timers.c"
-Invoking: MCU C Compiler
-arm-none-eabi-gcc -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M0 -DSDK_DEBUGCONSOLE=1 -D__NEWLIB__ -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/freertos/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/CAN" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/UART" -Os -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fmerge-constants -fmacro-prefix-map="../example/src/"=. -mcpu=cortex-m0 -mthumb -D__NEWLIB__ -fstack-usage -specs=nano.specs -MMD -MP -MF"example/src/cr_startup_lpc11xx.d" -MT"example/src/cr_startup_lpc11xx.d" -o "example/src/cr_startup_lpc11xx.o" "../example/src/cr_startup_lpc11xx.c"
-arm-none-eabi-gcc -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M0 -DSDK_DEBUGCONSOLE=1 -D__NEWLIB__ -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/freertos/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/CAN" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/UART" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fmerge-constants -fmacro-prefix-map="../example/src/"=. -mcpu=cortex-m0 -mthumb -D__NEWLIB__ -fstack-usage -specs=nano.specs -MMD -MP -MF"example/src/freertos_blinky.d" -MT"example/src/freertos_blinky.o" -MT"example/src/freertos_blinky.d" -o "example/src/freertos_blinky.o" "../example/src/freertos_blinky.c"
 In file included from /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/inc/chip.h:232,
                  from /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/inc/board.h:35,
                  from /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/inc/FreeRTOSConfig.h:60,
@@ -94,11 +90,36 @@ In file included from /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_c
 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/inc/pmu_11xx.h:49:8: warning: missing terminating " character
    49 | #error "LPC1125 support for the PMU driver is not ready
       |        ^
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M0 -DSDK_DEBUGCONSOLE=1 -D__NEWLIB__ -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/freertos/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/CAN" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/UART" -Os -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fmerge-constants -fmacro-prefix-map="../example/src/"=. -mcpu=cortex-m0 -mthumb -D__NEWLIB__ -fstack-usage -specs=nano.specs -MMD -MP -MF"example/src/cr_startup_lpc11xx.d" -MT"example/src/cr_startup_lpc11xx.d" -o "example/src/cr_startup_lpc11xx.o" "../example/src/cr_startup_lpc11xx.c"
+Building file: ../example/src/freertos_blinky.c
+Building file: ../example/src/sysinit.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M0 -DSDK_DEBUGCONSOLE=1 -D__NEWLIB__ -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/freertos/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/CAN" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/UART" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fmerge-constants -fmacro-prefix-map="../example/src/"=. -mcpu=cortex-m0 -mthumb -D__NEWLIB__ -fstack-usage -specs=nano.specs -MMD -MP -MF"example/src/freertos_blinky.d" -MT"example/src/freertos_blinky.o" -MT"example/src/freertos_blinky.d" -o "example/src/freertos_blinky.o" "../example/src/freertos_blinky.c"
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M0 -DSDK_DEBUGCONSOLE=1 -D__NEWLIB__ -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/freertos/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/CAN" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/UART" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fmerge-constants -fmacro-prefix-map="../example/src/"=. -mcpu=cortex-m0 -mthumb -D__NEWLIB__ -fstack-usage -specs=nano.specs -MMD -MP -MF"example/src/sysinit.d" -MT"example/src/sysinit.o" -MT"example/src/sysinit.d" -o "example/src/sysinit.o" "../example/src/sysinit.c"
+Building file: ../example/UART/uart_drv.c
+In file included from /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/inc/chip.h:232,
+                 from /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/inc/board.h:35,
+                 from ../example/src/sysinit.c:32:
+/home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/inc/pmu_11xx.h:49:8: warning: missing terminating " character
+   49 | #error "LPC1125 support for the PMU driver is not ready
+      |        ^
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M0 -DSDK_DEBUGCONSOLE=1 -D__NEWLIB__ -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/freertos/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/CAN" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/UART" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fmerge-constants -fmacro-prefix-map="../example/UART/"=. -mcpu=cortex-m0 -mthumb -D__NEWLIB__ -fstack-usage -specs=nano.specs -MMD -MP -MF"example/UART/uart_drv.d" -MT"example/UART/uart_drv.o" -MT"example/UART/uart_drv.d" -o "example/UART/uart_drv.o" "../example/UART/uart_drv.c"
+Finished building: ../example/src/cr_startup_lpc11xx.c
+Finished building: ../freertos/src/FreeRTOSCommonHooks.c
+ 
+Finished building: ../freertos/src/heap_1.c
+ 
+ 
+Building file: ../example/CAN/can.c
+Invoking: MCU C Compiler
 In file included from /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/inc/chip.h:232,
                  from ../example/src/freertos_blinky.c:32:
 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/inc/pmu_11xx.h:49:8: warning: missing terminating " character
    49 | #error "LPC1125 support for the PMU driver is not ready
       |        ^
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M0 -DSDK_DEBUGCONSOLE=1 -D__NEWLIB__ -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/freertos/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/CAN" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/UART" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fmerge-constants -fmacro-prefix-map="../example/CAN/"=. -mcpu=cortex-m0 -mthumb -D__NEWLIB__ -fstack-usage -specs=nano.specs -MMD -MP -MF"example/CAN/can.d" -MT"example/CAN/can.o" -MT"example/CAN/can.d" -o "example/CAN/can.o" "../example/CAN/can.c"
 In file included from /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/inc/chip.h:232,
                  from /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/inc/board.h:35,
                  from /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/UART/uart_drv.h:1,
@@ -106,43 +127,15 @@ In file included from /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_c
 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/inc/pmu_11xx.h:49:8: warning: missing terminating " character
    49 | #error "LPC1125 support for the PMU driver is not ready
       |        ^
-Building file: ../example/src/sysinit.c
-Building file: ../example/UART/uart_drv.c
-Invoking: MCU C Compiler
-arm-none-eabi-gcc -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M0 -DSDK_DEBUGCONSOLE=1 -D__NEWLIB__ -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/freertos/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/CAN" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/UART" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fmerge-constants -fmacro-prefix-map="../example/src/"=. -mcpu=cortex-m0 -mthumb -D__NEWLIB__ -fstack-usage -specs=nano.specs -MMD -MP -MF"example/src/sysinit.d" -MT"example/src/sysinit.o" -MT"example/src/sysinit.d" -o "example/src/sysinit.o" "../example/src/sysinit.c"
-Invoking: MCU C Compiler
-arm-none-eabi-gcc -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M0 -DSDK_DEBUGCONSOLE=1 -D__NEWLIB__ -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/freertos/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/CAN" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/UART" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fmerge-constants -fmacro-prefix-map="../example/UART/"=. -mcpu=cortex-m0 -mthumb -D__NEWLIB__ -fstack-usage -specs=nano.specs -MMD -MP -MF"example/UART/uart_drv.d" -MT"example/UART/uart_drv.o" -MT"example/UART/uart_drv.d" -o "example/UART/uart_drv.o" "../example/UART/uart_drv.c"
-In file included from /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/inc/chip.h:232,
-                 from /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/inc/board.h:35,
-                 from ../example/src/sysinit.c:32:
-/home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/inc/pmu_11xx.h:49:8: warning: missing terminating " character
-   49 | #error "LPC1125 support for the PMU driver is not ready
-      |        ^
-../example/src/freertos_blinky.c:83:13: warning: 'transmitPeriodic' defined but not used [-Wunused-function]
-   83 | static void transmitPeriodic(void *pvParameters)
-      |             ^~~~~~~~~~~~~~~~
-Finished building: ../freertos/src/FreeRTOSCommonHooks.c
-Finished building: ../freertos/src/heap_1.c
- 
- 
-Building file: ../example/CAN/can.c
 Finished building: ../freertos/src/timers.c
-Invoking: MCU C Compiler
-arm-none-eabi-gcc -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M0 -DSDK_DEBUGCONSOLE=1 -D__NEWLIB__ -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/freertos/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/inc" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/CAN" -I"/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/UART" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fmerge-constants -fmacro-prefix-map="../example/CAN/"=. -mcpu=cortex-m0 -mthumb -D__NEWLIB__ -fstack-usage -specs=nano.specs -MMD -MP -MF"example/CAN/can.d" -MT"example/CAN/can.o" -MT"example/CAN/can.d" -o "example/CAN/can.o" "../example/CAN/can.c"
- 
-Finished building: ../freertos/src/croutine.c
-Finished building: ../freertos/src/port.c
 Finished building: ../freertos/src/list.c
  
  
- 
-Finished building: ../example/src/cr_startup_lpc11xx.c
- 
-Finished building: ../example/src/freertos_blinky.c
- 
-Finished building: ../example/UART/uart_drv.c
+Finished building: ../freertos/src/port.c
  
 In file included from /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/inc/chip.h:232,
+Finished building: ../freertos/src/croutine.c
+ 
                  from /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/inc/board.h:35,
                  from ../example/CAN/can.h:1,
                  from ../example/CAN/can.c:1:
@@ -152,6 +145,10 @@ In file included from /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_c
 Finished building: ../example/src/sysinit.c
  
 Finished building: ../freertos/src/queue.c
+ 
+Finished building: ../example/src/freertos_blinky.c
+ 
+Finished building: ../example/UART/uart_drv.c
  
 Finished building: ../freertos/src/tasks.c
  
@@ -166,8 +163,8 @@ make --no-print-directory post-build
 Performing post-build steps
 arm-none-eabi-size "nxp_lpcxpresso_11c24_freertos_blinky.axf"; # arm-none-eabi-objcopy -O binary "nxp_lpcxpresso_11c24_freertos_blinky.axf" "nxp_lpcxpresso_11c24_freertos_blinky.bin" ; checksum -p LPC11C24_301 -d "nxp_lpcxpresso_11c24_freertos_blinky.bin";
    text	   data	    bss	    dec	    hex	filename
-  11564	    108	   1968	  13640	   3548	nxp_lpcxpresso_11c24_freertos_blinky.axf
+  11716	    108	   1968	  13792	   35e0	nxp_lpcxpresso_11c24_freertos_blinky.axf
  
 
-22:33:15 Build Finished. 0 errors, 13 warnings. (took 568ms)
+22:38:55 Build Finished. 0 errors, 12 warnings. (took 586ms)
 

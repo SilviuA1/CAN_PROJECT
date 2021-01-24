@@ -60,11 +60,6 @@ static void prvSetupHardware(void)
 	CAN_init();
 }
 
-
-/*****************************************************************************
- * Public functions
- ****************************************************************************/
-
 static void blinkLed(void *pvParameters)
 {
 	bool ledState = false;
@@ -77,8 +72,6 @@ static void blinkLed(void *pvParameters)
 		vTaskDelay(configTICK_RATE_HZ * 2);
 	}
 }
-
-
 
 static void transmitPeriodic(void *pvParameters)
 {
@@ -101,17 +94,21 @@ static void transmitPeriodic(void *pvParameters)
 	}
 }
 
-/**
- * @brief	Main UART program body
- * @return	Always returns 1
- */
+/*****************************************************************************
+ * Public functions
+ ****************************************************************************/
+
+
 int main(void)
 {
 	prvSetupHardware();
 
-	/* LED1 toggle thread */
-	xTaskCreate(blinkLed, (signed char *) "vTaskLed1",
-				2*configMINIMAL_STACK_SIZE, NULL, (tskIDLE_PRIORITY + 1UL),
+	xTaskCreate(blinkLed, (signed char *) "blinkLed",
+				configMINIMAL_STACK_SIZE + 10, NULL, (tskIDLE_PRIORITY + 1UL),
+				(xTaskHandle *) NULL);
+
+	xTaskCreate(transmitPeriodic, (signed char *) "periodicCanTransmit",
+				configMINIMAL_STACK_SIZE, NULL, (tskIDLE_PRIORITY + 1UL),
 				(xTaskHandle *) NULL);
 
 	/* Send initial messages */
