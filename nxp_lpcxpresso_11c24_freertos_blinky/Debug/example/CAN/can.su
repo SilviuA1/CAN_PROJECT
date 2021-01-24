@@ -1,0 +1,8 @@
+core_cm0.h:500:22:NVIC_EnableIRQ	16	static
+clock_11xx.h:295:20:Chip_Clock_EnablePeriphClock	16	static
+can.c:5:6:baudrateCalculate	48	static
+can.c:36:6:CAN_rx	16	static
+can.c:52:6:CAN_tx	16	static
+can.c:57:6:CAN_error	16	static
+can.c:59:6:CAN_IRQHandler	8	static
+can.c:67:6:CAN_init	56	static

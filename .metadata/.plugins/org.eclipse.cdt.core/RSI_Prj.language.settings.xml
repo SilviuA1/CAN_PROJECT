@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project>
+	<configuration id="com.crt.advproject.config.exe.debug.2110908120" name="Debug">
+		<extension point="org.eclipse.cdt.core.LanguageSettingsProvider">
+			<provider id="com.crt.advproject.GCCBuildCommandParser">
+				<language id="org.eclipse.cdt.core.gcc">
+					<resource project-relative-path="Logger/src/uart_logger.c">
+						<entry kind="includePath" name="/${ProjName}/CAN/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/Trace/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/Logger/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/uart_midleware/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/uart/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/LED/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/lpc_chip_11cxx_lib/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/nxp_lpcxpresso_11c24_board_lib/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="CORE_M0" value="1"/>
+						<entry kind="macro" name="DEBUG" value="1"/>
+						<entry kind="macro" name="__CODE_RED" value="1"/>
+						<entry kind="macro" name="__REDLIB__" value="1"/>
+						<entry kind="macro" name="__USE_LPCOPEN" value="1"/>
+					</resource>
+					<resource project-relative-path="uart_midleware/src/uart_midleware.c">
+						<entry kind="includePath" name="/${ProjName}/CAN/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/Trace/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/Logger/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/uart_midleware/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/uart/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/LED/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/lpc_chip_11cxx_lib/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/nxp_lpcxpresso_11c24_board_lib/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="CORE_M0" value="1"/>
+						<entry kind="macro" name="DEBUG" value="1"/>
+						<entry kind="macro" name="__CODE_RED" value="1"/>
+						<entry kind="macro" name="__REDLIB__" value="1"/>
+						<entry kind="macro" name="__USE_LPCOPEN" value="1"/>
+					</resource>
+					<resource project-relative-path="rsi_prj/src/cr_startup_lpc11xx.c">
+						<entry kind="includePath" name="/${ProjName}/CAN/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/Trace/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/Logger/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/uart_midleware/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/uart/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/LED/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/lpc_chip_11cxx_lib/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/nxp_lpcxpresso_11c24_board_lib/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="CORE_M0" value="1"/>
+						<entry kind="macro" name="DEBUG" value="1"/>
+						<entry kind="macro" name="__CODE_RED" value="1"/>
+						<entry kind="macro" name="__REDLIB__" value="1"/>
+						<entry kind="macro" name="__USE_LPCOPEN" value="1"/>
+					</resource>
+					<resource project-relative-path="rsi_prj/src/interpreter.c">
+						<entry kind="includePath" name="/${ProjName}/CAN/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/Trace/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/Logger/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/uart_midleware/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/uart/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/LED/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/lpc_chip_11cxx_lib/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/nxp_lpcxpresso_11c24_board_lib/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="CORE_M0" value="1"/>
+						<entry kind="macro" name="DEBUG" value="1"/>
+						<entry kind="macro" name="__CODE_RED" value="1"/>
+						<entry kind="macro" name="__REDLIB__" value="1"/>
+						<entry kind="macro" name="__USE_LPCOPEN" value="1"/>
+					</resource>
+					<resource project-relative-path="uart/src/uart_drv.c">
+						<entry kind="includePath" name="/${ProjName}/CAN/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/Trace/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/Logger/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/uart_midleware/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/uart/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/LED/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/lpc_chip_11cxx_lib/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/nxp_lpcxpresso_11c24_board_lib/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="CORE_M0" value="1"/>
+						<entry kind="macro" name="DEBUG" value="1"/>
+						<entry kind="macro" name="__CODE_RED" value="1"/>
+						<entry kind="macro" name="__REDLIB__" value="1"/>
+						<entry kind="macro" name="__USE_LPCOPEN" value="1"/>
+					</resource>
+					<resource project-relative-path="LED/src/rgb_led.c">
+						<entry kind="includePath" name="/${ProjName}/CAN/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/Trace/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/Logger/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/uart_midleware/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/uart/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/LED/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/lpc_chip_11cxx_lib/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/nxp_lpcxpresso_11c24_board_lib/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="CORE_M0" value="1"/>
+						<entry kind="macro" name="DEBUG" value="1"/>
+						<entry kind="macro" name="__CODE_RED" value="1"/>
+						<entry kind="macro" name="__REDLIB__" value="1"/>
+						<entry kind="macro" name="__USE_LPCOPEN" value="1"/>
+					</resource>
+					<resource project-relative-path="CAN/src/can.c">
+						<entry kind="includePath" name="/${ProjName}/CAN/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/Trace/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/Logger/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/uart_midleware/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/uart/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/LED/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/lpc_chip_11cxx_lib/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/nxp_lpcxpresso_11c24_board_lib/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="CORE_M0" value="1"/>
+						<entry kind="macro" name="DEBUG" value="1"/>
+						<entry kind="macro" name="__CODE_RED" value="1"/>
+						<entry kind="macro" name="__REDLIB__" value="1"/>
+						<entry kind="macro" name="__USE_LPCOPEN" value="1"/>
+					</resource>
+					<resource project-relative-path="CAN/src/can_cfg.c">
+						<entry kind="includePath" name="/${ProjName}/CAN/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/Trace/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/Logger/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/uart_midleware/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/uart/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/LED/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/lpc_chip_11cxx_lib/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/nxp_lpcxpresso_11c24_board_lib/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="CORE_M0" value="1"/>
+						<entry kind="macro" name="DEBUG" value="1"/>
+						<entry kind="macro" name="__CODE_RED" value="1"/>
+						<entry kind="macro" name="__REDLIB__" value="1"/>
+						<entry kind="macro" name="__USE_LPCOPEN" value="1"/>
+					</resource>
+					<resource project-relative-path="rsi_prj/src/main.c">
+						<entry kind="includePath" name="/${ProjName}/CAN/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/Trace/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/Logger/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/uart_midleware/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/uart/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/LED/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/lpc_chip_11cxx_lib/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/nxp_lpcxpresso_11c24_board_lib/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="CORE_M0" value="1"/>
+						<entry kind="macro" name="DEBUG" value="1"/>
+						<entry kind="macro" name="__CODE_RED" value="1"/>
+						<entry kind="macro" name="__REDLIB__" value="1"/>
+						<entry kind="macro" name="__USE_LPCOPEN" value="1"/>
+					</resource>
+					<resource project-relative-path="rsi_prj/src/sysinit.c">
+						<entry kind="includePath" name="/${ProjName}/CAN/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/Trace/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/Logger/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/uart_midleware/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/uart/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/LED/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/lpc_chip_11cxx_lib/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/nxp_lpcxpresso_11c24_board_lib/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="CORE_M0" value="1"/>
+						<entry kind="macro" name="DEBUG" value="1"/>
+						<entry kind="macro" name="__CODE_RED" value="1"/>
+						<entry kind="macro" name="__REDLIB__" value="1"/>
+						<entry kind="macro" name="__USE_LPCOPEN" value="1"/>
+					</resource>
+					<resource project-relative-path="Trace/src/uart_trace.c">
+						<entry kind="includePath" name="/${ProjName}/CAN/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/Trace/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/Logger/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/uart_midleware/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/uart/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/LED/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/lpc_chip_11cxx_lib/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/nxp_lpcxpresso_11c24_board_lib/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="CORE_M0" value="1"/>
+						<entry kind="macro" name="DEBUG" value="1"/>
+						<entry kind="macro" name="__CODE_RED" value="1"/>
+						<entry kind="macro" name="__REDLIB__" value="1"/>
+						<entry kind="macro" name="__USE_LPCOPEN" value="1"/>
+					</resource>
+					<resource project-relative-path="LED/src/rgb_led_cfg.c">
+						<entry kind="includePath" name="/${ProjName}/CAN/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/Trace/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/Logger/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/uart_midleware/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/uart/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/LED/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/lpc_chip_11cxx_lib/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/nxp_lpcxpresso_11c24_board_lib/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="CORE_M0" value="1"/>
+						<entry kind="macro" name="DEBUG" value="1"/>
+						<entry kind="macro" name="__CODE_RED" value="1"/>
+						<entry kind="macro" name="__REDLIB__" value="1"/>
+						<entry kind="macro" name="__USE_LPCOPEN" value="1"/>
+					</resource>
+				</language>
+			</provider>
+		</extension>
+	</configuration>
+</project>

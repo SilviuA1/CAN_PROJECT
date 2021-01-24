@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;nxp_lpcxpresso_11c24_freertos_blinky/example/UART/uart.c&apos; to &apos;uart_drv.c&apos;" description="Rename resource &apos;uart.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="example/UART/uart.c" name="uart_drv.c" stamp="1608483867617" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;nxp_lpcxpresso_11c24_freertos_blinky/example/UART/uart.h&apos; to &apos;uart_drv.h&apos;" description="Rename resource &apos;uart.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="example/UART/uart.h" name="uart_drv.h" stamp="1608483873543" updateReferences="true"/>
+</session>
