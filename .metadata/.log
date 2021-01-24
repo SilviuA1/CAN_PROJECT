@@ -13150,3 +13150,68 @@ Caused by: java.io.IOException: Document is closed
 
 !ENTRY unknown 4 0 2021-01-24 21:49:52.393
 !MESSAGE Execution of 'dbus-send --print-reply --dest=org.freedesktop.FileManager1 /org/freedesktop/FileManager1 org.freedesktop.FileManager1.ShowItems array:string:"file:/home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_freertos_blinky/example/src/freertos_blinky.c" string:""' failed with return code: 1
+
+!ENTRY com.crt.log 1 0 2021-01-24 22:09:17.962
+!MESSAGE Trying to connect to redlink server on port 3025.
+
+!ENTRY com.nxp.mcuxpresso.core.debug.support.linkserver 1 0 2021-01-24 22:09:18.963
+!MESSAGE RedlinkServer telnet session connected on port 3025->46562 @ 127.0.0.1
+
+!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2021-01-24 22:09:22.616
+!MESSAGE Telnet session connected on port 3330->45714 @ 127.0.0.1
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2021-01-24 22:09:49.103
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.concurrent.ImmediateRequestMonitor@7561e3a9): Status ERROR: org.eclipse.cdt.dsf.gdb code=10003 Invalid context type. null' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10003 2021-01-24 22:09:49.103
+!MESSAGE Invalid context type.
+
+!ENTRY com.crt.log 1 0 2021-01-24 22:10:16.955
+!MESSAGE Trying to connect to redlink server on port 3025.
+
+!ENTRY com.nxp.mcuxpresso.core.debug.support.linkserver 1 0 2021-01-24 22:10:17.956
+!MESSAGE RedlinkServer telnet session connected on port 3025->46576 @ 127.0.0.1
+
+!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2021-01-24 22:10:21.579
+!MESSAGE Telnet session connected on port 3330->45728 @ 127.0.0.1
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2021-01-24 22:11:24.524
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.concurrent.ImmediateRequestMonitor@17a4a6e7): Status ERROR: org.eclipse.cdt.dsf.gdb code=10003 Invalid context type. null' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10003 2021-01-24 22:11:24.524
+!MESSAGE Invalid context type.
+
+!ENTRY com.crt.log 1 0 2021-01-24 22:11:27.439
+!MESSAGE Trying to connect to redlink server on port 3025.
+
+!ENTRY com.nxp.mcuxpresso.core.debug.support.linkserver 1 0 2021-01-24 22:11:28.441
+!MESSAGE RedlinkServer telnet session connected on port 3025->46588 @ 127.0.0.1
+
+!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2021-01-24 22:11:30.349
+!MESSAGE Telnet session connected on port 3330->45740 @ 127.0.0.1
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2021-01-24 22:12:37.953
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.concurrent.ImmediateRequestMonitor@265c1ead): Status ERROR: org.eclipse.cdt.dsf.gdb code=10003 Invalid context type. null' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10003 2021-01-24 22:12:37.953
+!MESSAGE Invalid context type.
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2021-01-24 22:12:39.399
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.concurrent.ImmediateRequestMonitor@2aacb948): Status ERROR: org.eclipse.cdt.dsf.gdb code=10003 Invalid context type. null' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10003 2021-01-24 22:12:39.399
+!MESSAGE Invalid context type.
+
+!ENTRY com.crt.log 1 0 2021-01-24 22:17:01.606
+!MESSAGE Trying to connect to redlink server on port 3025.
+
+!ENTRY com.nxp.mcuxpresso.core.debug.support.linkserver 1 0 2021-01-24 22:17:02.607
+!MESSAGE RedlinkServer telnet session connected on port 3025->46606 @ 127.0.0.1
+
+!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2021-01-24 22:17:06.184
+!MESSAGE Telnet session connected on port 3330->45758 @ 127.0.0.1
+
+!ENTRY com.crt.log 1 0 2021-01-24 22:17:36.096
+!MESSAGE Trying to connect to redlink server on port 3025.
+
+!ENTRY com.nxp.mcuxpresso.core.debug.support.linkserver 1 0 2021-01-24 22:17:37.097
+!MESSAGE RedlinkServer telnet session connected on port 3025->46618 @ 127.0.0.1
+
+!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2021-01-24 22:17:40.658
+!MESSAGE Telnet session connected on port 3330->45770 @ 127.0.0.1
