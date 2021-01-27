@@ -60,3 +60,17 @@ void uart_init()
   Chip_UART_SendBlocking(LPC_USART, inst1, sizeof(inst1) - 1);
 //  Chip_UART_SendRB(LPC_USART, &txring, inst1, sizeof(inst1) - 1);
 }
+
+
+void uart_deinit()
+{
+	/* DeInitialize UART0 peripheral */
+	NVIC_DisableIRQ(UART0_IRQn);
+	Chip_UART_DeInit(LPC_USART);
+}
+
+
+void uart_send_msg(char message[])
+{
+	Chip_UART_SendBlocking(LPC_USART, message, sizeof(message) / sizeof(message[0]) - 1);
+}

@@ -13250,3 +13250,80 @@ Caused by: java.io.IOException: Document is closed
 !MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.concurrent.ImmediateRequestMonitor@34b49369): Status ERROR: org.eclipse.cdt.dsf.gdb code=10003 Invalid context type. null' resulted in an error.
 !SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10003 2021-01-24 22:39:20.928
 !MESSAGE Invalid context type.
+
+!ENTRY com.crt.log 1 0 2021-01-27 21:03:33.294
+!MESSAGE Trying to connect to redlink server on port 3025.
+
+!ENTRY com.nxp.mcuxpresso.core.debug.support.linkserver 1 0 2021-01-27 21:03:34.296
+!MESSAGE RedlinkServer telnet session connected on port 3025->35648 @ 127.0.0.1
+
+!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2021-01-27 21:03:38.165
+!MESSAGE Telnet session connected on port 3330->34940 @ 127.0.0.1
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2021-01-27 21:04:04.506
+!MESSAGE Failed to execute MI command:
+-data-list-register-values x 91
+Error message from debugger back end:
+Selected thread is running.
+!STACK 0
+java.lang.Exception: Selected thread is running.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:993)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:822)
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2021-01-27 21:04:09.731
+!MESSAGE Failed to execute MI command:
+-data-list-register-values x 91
+Error message from debugger back end:
+Selected thread is running.
+!STACK 0
+java.lang.Exception: Selected thread is running.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:993)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:822)
+
+!ENTRY com.crt.log 1 0 2021-01-27 21:44:20.074
+!MESSAGE Trying to connect to redlink server on port 3025.
+
+!ENTRY com.nxp.mcuxpresso.core.debug.support.linkserver 1 0 2021-01-27 21:44:21.076
+!MESSAGE RedlinkServer telnet session connected on port 3025->35798 @ 127.0.0.1
+
+!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2021-01-27 21:44:25.030
+!MESSAGE Telnet session connected on port 3330->35090 @ 127.0.0.1
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10001 2021-01-27 21:45:10.003
+!MESSAGE Connection is shut down
+
+!ENTRY com.crt.log 1 0 2021-01-27 21:47:03.012
+!MESSAGE Trying to connect to redlink server on port 3025.
+
+!ENTRY com.nxp.mcuxpresso.core.debug.support.linkserver 1 0 2021-01-27 21:47:04.014
+!MESSAGE RedlinkServer telnet session connected on port 3025->35812 @ 127.0.0.1
+
+!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2021-01-27 21:47:07.785
+!MESSAGE Telnet session connected on port 3330->35104 @ 127.0.0.1
+
+!ENTRY com.crt.log 1 0 2021-01-27 21:47:43.445
+!MESSAGE Trying to connect to redlink server on port 3025.
+
+!ENTRY com.nxp.mcuxpresso.core.debug.support.linkserver 1 0 2021-01-27 21:47:44.447
+!MESSAGE RedlinkServer telnet session connected on port 3025->35824 @ 127.0.0.1
+
+!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2021-01-27 21:47:48.072
+!MESSAGE Telnet session connected on port 3330->35116 @ 127.0.0.1
+
+!ENTRY com.crt.log 1 0 2021-01-27 21:51:38.418
+!MESSAGE Trying to connect to redlink server on port 3025.
+
+!ENTRY com.nxp.mcuxpresso.core.debug.support.linkserver 1 0 2021-01-27 21:51:39.419
+!MESSAGE RedlinkServer telnet session connected on port 3025->35874 @ 127.0.0.1
+
+!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2021-01-27 21:51:42.992
+!MESSAGE Telnet session connected on port 3330->35166 @ 127.0.0.1
+
+!ENTRY com.crt.log 1 0 2021-01-27 21:52:44.499
+!MESSAGE Trying to connect to redlink server on port 3025.
+
+!ENTRY com.nxp.mcuxpresso.core.debug.support.linkserver 1 0 2021-01-27 21:52:45.501
+!MESSAGE RedlinkServer telnet session connected on port 3025->35892 @ 127.0.0.1
+
+!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2021-01-27 21:52:49.274
+!MESSAGE Telnet session connected on port 3330->35184 @ 127.0.0.1

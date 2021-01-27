@@ -1377,6 +1377,10 @@ Discarded input sections
  .text          0x0000000000000000        0x0 ./example/src/freertos_blinky.o
  .data          0x0000000000000000        0x0 ./example/src/freertos_blinky.o
  .bss           0x0000000000000000        0x0 ./example/src/freertos_blinky.o
+ .text.releaseHardwareSetup
+                0x0000000000000000        0xe ./example/src/freertos_blinky.o
+ .text.transmitPeriodic
+                0x0000000000000000       0x60 ./example/src/freertos_blinky.o
  .debug_macro   0x0000000000000000      0xa96 ./example/src/freertos_blinky.o
  .debug_macro   0x0000000000000000       0x22 ./example/src/freertos_blinky.o
  .debug_macro   0x0000000000000000       0x8e ./example/src/freertos_blinky.o
@@ -1606,37 +1610,14 @@ Discarded input sections
  .text          0x0000000000000000        0x0 ./example/UART/uart_drv.o
  .data          0x0000000000000000        0x0 ./example/UART/uart_drv.o
  .bss           0x0000000000000000        0x0 ./example/UART/uart_drv.o
- .text.NVIC_EnableIRQ
-                0x0000000000000000       0x2c ./example/UART/uart_drv.o
- .text.NVIC_SetPriority
-                0x0000000000000000       0xdc ./example/UART/uart_drv.o
- .text.Chip_IOCON_PinMuxSet
-                0x0000000000000000       0x26 ./example/UART/uart_drv.o
- .text.Chip_UART_TXEnable
-                0x0000000000000000       0x16 ./example/UART/uart_drv.o
- .text.Chip_UART_IntEnable
-                0x0000000000000000       0x1e ./example/UART/uart_drv.o
- .text.Chip_UART_SetupFIFOS
-                0x0000000000000000       0x18 ./example/UART/uart_drv.o
- .text.Chip_UART_ConfigData
-                0x0000000000000000       0x18 ./example/UART/uart_drv.o
- .rodata.inst1  0x0000000000000000       0x1f ./example/UART/uart_drv.o
- .bss.txring    0x0000000000000000       0x14 ./example/UART/uart_drv.o
- .bss.rxring    0x0000000000000000       0x14 ./example/UART/uart_drv.o
- .bss.rxbuff    0x0000000000000000       0x80 ./example/UART/uart_drv.o
- .bss.txbuff    0x0000000000000000       0x80 ./example/UART/uart_drv.o
+ .text.NVIC_DisableIRQ
+                0x0000000000000000       0x30 ./example/UART/uart_drv.o
  .text.UART_IRQHandler2
                 0x0000000000000000       0x24 ./example/UART/uart_drv.o
- .text.Init_UART_PinMux
-                0x0000000000000000       0x28 ./example/UART/uart_drv.o
- .text.uart_init
-                0x0000000000000000       0x94 ./example/UART/uart_drv.o
- .debug_info    0x0000000000000000     0x11dd ./example/UART/uart_drv.o
- .debug_abbrev  0x0000000000000000      0x2eb ./example/UART/uart_drv.o
- .debug_aranges
-                0x0000000000000000       0x68 ./example/UART/uart_drv.o
- .debug_ranges  0x0000000000000000       0x58 ./example/UART/uart_drv.o
- .debug_macro   0x0000000000000000      0x2f6 ./example/UART/uart_drv.o
+ .text.uart_deinit
+                0x0000000000000000       0x1c ./example/UART/uart_drv.o
+ .text.uart_send_msg
+                0x0000000000000000       0x20 ./example/UART/uart_drv.o
  .debug_macro   0x0000000000000000      0xa96 ./example/UART/uart_drv.o
  .debug_macro   0x0000000000000000       0x22 ./example/UART/uart_drv.o
  .debug_macro   0x0000000000000000       0x8e ./example/UART/uart_drv.o
@@ -1691,12 +1672,6 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x16 ./example/UART/uart_drv.o
  .debug_macro   0x0000000000000000      0x145 ./example/UART/uart_drv.o
  .debug_macro   0x0000000000000000       0x20 ./example/UART/uart_drv.o
- .debug_line    0x0000000000000000      0x88d ./example/UART/uart_drv.o
- .debug_str     0x0000000000000000     0xcbcf ./example/UART/uart_drv.o
- .comment       0x0000000000000000       0x7a ./example/UART/uart_drv.o
- .debug_frame   0x0000000000000000      0x144 ./example/UART/uart_drv.o
- .ARM.attributes
-                0x0000000000000000       0x2c ./example/UART/uart_drv.o
  .group         0x0000000000000000        0xc ./example/CAN/can.o
  .group         0x0000000000000000        0xc ./example/CAN/can.o
  .group         0x0000000000000000        0xc ./example/CAN/can.o
@@ -2305,8 +2280,6 @@ Discarded input sections
                 0x0000000000000000       0x2a /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(ring_buffer.o)
  .text.RingBuffer_IsEmpty
                 0x0000000000000000       0x24 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(ring_buffer.o)
- .text.RingBuffer_Init
-                0x0000000000000000       0x38 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(ring_buffer.o)
  .text.RingBuffer_Insert
                 0x0000000000000000       0x5c /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(ring_buffer.o)
  .text.RingBuffer_InsertMult
@@ -2315,12 +2288,6 @@ Discarded input sections
                 0x0000000000000000       0x5c /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(ring_buffer.o)
  .text.RingBuffer_PopMult
                 0x0000000000000000      0x120 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(ring_buffer.o)
- .debug_info    0x0000000000000000      0xc28 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(ring_buffer.o)
- .debug_abbrev  0x0000000000000000      0x23e /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(ring_buffer.o)
- .debug_aranges
-                0x0000000000000000       0x60 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(ring_buffer.o)
- .debug_ranges  0x0000000000000000       0x50 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(ring_buffer.o)
- .debug_macro   0x0000000000000000      0x151 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(ring_buffer.o)
  .debug_macro   0x0000000000000000      0xa8a /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(ring_buffer.o)
  .debug_macro   0x0000000000000000       0x22 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(ring_buffer.o)
  .debug_macro   0x0000000000000000       0x46 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(ring_buffer.o)
@@ -2336,20 +2303,12 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x20 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(ring_buffer.o)
  .debug_macro   0x0000000000000000      0x1a3 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(ring_buffer.o)
  .debug_macro   0x0000000000000000      0x339 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(ring_buffer.o)
- .debug_macro   0x0000000000000000       0x10 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(ring_buffer.o)
  .debug_macro   0x0000000000000000       0x35 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(ring_buffer.o)
  .debug_macro   0x0000000000000000       0xef /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(ring_buffer.o)
  .debug_macro   0x0000000000000000       0x6a /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(ring_buffer.o)
  .debug_macro   0x0000000000000000      0x1df /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(ring_buffer.o)
  .debug_macro   0x0000000000000000       0x22 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(ring_buffer.o)
  .debug_macro   0x0000000000000000       0x74 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(ring_buffer.o)
- .debug_macro   0x0000000000000000       0x10 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(ring_buffer.o)
- .debug_line    0x0000000000000000      0x69b /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(ring_buffer.o)
- .debug_str     0x0000000000000000     0x744c /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(ring_buffer.o)
- .comment       0x0000000000000000       0x7a /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(ring_buffer.o)
- .debug_frame   0x0000000000000000      0x130 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(ring_buffer.o)
- .ARM.attributes
-                0x0000000000000000       0x2c /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(ring_buffer.o)
  .group         0x0000000000000000        0xc /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(sysctl_11xx.o)
  .group         0x0000000000000000        0xc /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(sysctl_11xx.o)
  .group         0x0000000000000000        0xc /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(sysctl_11xx.o)
@@ -2441,48 +2400,22 @@ Discarded input sections
  .text          0x0000000000000000        0x0 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
  .data          0x0000000000000000        0x0 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
  .bss           0x0000000000000000        0x0 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
- .text.Chip_Clock_EnablePeriphClock
-                0x0000000000000000       0x30 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
  .text.Chip_Clock_DisablePeriphClock
                 0x0000000000000000       0x34 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
- .text.Chip_Clock_SetUARTClockDiv
-                0x0000000000000000       0x1c /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
  .text.RingBuffer_IsEmpty
                 0x0000000000000000       0x24 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
- .text.Chip_UART_SendByte
-                0x0000000000000000       0x1e /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
  .text.Chip_UART_ReadByte
                 0x0000000000000000       0x16 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
  .text.Chip_UART_IntEnable
                 0x0000000000000000       0x1e /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
  .text.Chip_UART_IntDisable
                 0x0000000000000000       0x20 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
- .text.Chip_UART_SetupFIFOS
-                0x0000000000000000       0x18 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
- .text.Chip_UART_ConfigData
-                0x0000000000000000       0x18 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
- .text.Chip_UART_EnableDivisorAccess
-                0x0000000000000000       0x1c /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
- .text.Chip_UART_DisableDivisorAccess
-                0x0000000000000000       0x1e /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
- .text.Chip_UART_SetDivisorLatches
-                0x0000000000000000       0x30 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
- .text.Chip_UART_ReadLineStatus
-                0x0000000000000000       0x14 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
- .text.Chip_UART_Init
-                0x0000000000000000       0x36 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
  .text.Chip_UART_DeInit
                 0x0000000000000000       0x16 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
- .text.Chip_UART_Send
-                0x0000000000000000       0x52 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
- .text.Chip_UART_SendBlocking
-                0x0000000000000000       0x4e /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
  .text.Chip_UART_Read
                 0x0000000000000000       0x54 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
  .text.Chip_UART_ReadBlocking
                 0x0000000000000000       0x50 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
- .text.Chip_UART_SetBaud
-                0x0000000000000000       0x64 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
  .text.Chip_UART_RXIntHandlerRB
                 0x0000000000000000       0x44 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
  .text.Chip_UART_TXIntHandlerRB
@@ -2495,12 +2428,6 @@ Discarded input sections
                 0x0000000000000000       0x4c /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
  .text.Chip_UART_SetBaudFDR
                 0x0000000000000000       0xe0 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
- .debug_info    0x0000000000000000      0xf75 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
- .debug_abbrev  0x0000000000000000      0x25e /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
- .debug_aranges
-                0x0000000000000000       0xf0 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
- .debug_ranges  0x0000000000000000       0xe0 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
- .debug_macro   0x0000000000000000      0x16f /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
  .debug_macro   0x0000000000000000      0xa8a /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
  .debug_macro   0x0000000000000000       0x22 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
  .debug_macro   0x0000000000000000       0x8e /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
@@ -2528,12 +2455,6 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x7c /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
  .debug_macro   0x0000000000000000      0x21c /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
  .debug_macro   0x0000000000000000      0x113 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
- .debug_line    0x0000000000000000      0x8ae /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
- .debug_str     0x0000000000000000     0x8659 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
- .comment       0x0000000000000000       0x7a /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
- .debug_frame   0x0000000000000000      0x370 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
- .ARM.attributes
-                0x0000000000000000       0x2c /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
  .data          0x0000000000000000        0x0 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
  .bss           0x0000000000000000        0x0 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
  .data          0x0000000000000000        0x0 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
@@ -2807,7 +2728,7 @@ END GROUP
                 0x0000000010002000                __top_RamLoc8 = 0x10002000
                 0x0000000010002000                __top_RAM = 0x10002000
 
-.text           0x0000000000000000     0x2dc4
+.text           0x0000000000000000     0x322c
  FILL mask 0xff
                 0x0000000000000000                __vectors_start__ = ABSOLUTE (.)
  *(.isr_vector)
@@ -2816,13 +2737,13 @@ END GROUP
                 0x00000000000000c0                . = ALIGN (0x4)
                 0x00000000000000c0                __section_table_start = .
                 0x00000000000000c0                __data_section_table = .
-                0x00000000000000c0        0x4 LONG 0x2dc4 LOADADDR (.data)
+                0x00000000000000c0        0x4 LONG 0x322c LOADADDR (.data)
                 0x00000000000000c4        0x4 LONG 0x10000000 ADDR (.data)
                 0x00000000000000c8        0x4 LONG 0x6c SIZEOF (.data)
                 0x00000000000000cc                __data_section_table_end = .
                 0x00000000000000cc                __bss_section_table = .
                 0x00000000000000cc        0x4 LONG 0x1000006c ADDR (.bss)
-                0x00000000000000d0        0x4 LONG 0x7b0 SIZEOF (.bss)
+                0x00000000000000d0        0x4 LONG 0x8d8 SIZEOF (.bss)
                 0x00000000000000d4                __bss_section_table_end = .
                 0x00000000000000d4                __section_table_end = .
  *(.after_vectors*)
@@ -2947,377 +2868,431 @@ END GROUP
  .text.prvDeleteTCB
                 0x0000000000000d60       0x22 ./freertos/src/tasks.o
  .text.prvSetupHardware
-                0x0000000000000d82       0x1e ./example/src/freertos_blinky.o
+                0x0000000000000d82       0x22 ./example/src/freertos_blinky.o
  .text.blinkLed
-                0x0000000000000da0       0x44 ./example/src/freertos_blinky.o
- .text.transmitPeriodic
-                0x0000000000000de4       0x60 ./example/src/freertos_blinky.o
- .text.main     0x0000000000000e44       0x6c ./example/src/freertos_blinky.o
-                0x0000000000000e44                main
+                0x0000000000000da4       0x44 ./example/src/freertos_blinky.o
+ .text.main     0x0000000000000de8       0x48 ./example/src/freertos_blinky.o
+                0x0000000000000de8                main
  .text.SystemInit
-                0x0000000000000eb0        0xe ./example/src/sysinit.o
-                0x0000000000000eb0                SystemInit
- *fill*         0x0000000000000ebe        0x2 ff
+                0x0000000000000e30        0xe ./example/src/sysinit.o
+                0x0000000000000e30                SystemInit
+ *fill*         0x0000000000000e3e        0x2 ff
  .text.NVIC_EnableIRQ
-                0x0000000000000ec0       0x2c ./example/CAN/can.o
- .text.Chip_Clock_EnablePeriphClock
-                0x0000000000000eec       0x30 ./example/CAN/can.o
- .text.baudrateCalculate
-                0x0000000000000f1c       0xca ./example/CAN/can.o
-                0x0000000000000f1c                baudrateCalculate
- *fill*         0x0000000000000fe6        0x2 ff
- .text.CAN_rx   0x0000000000000fe8       0x68 ./example/CAN/can.o
-                0x0000000000000fe8                CAN_rx
- .text.CAN_tx   0x0000000000001050       0x20 ./example/CAN/can.o
-                0x0000000000001050                CAN_tx
- .text.CAN_error
-                0x0000000000001070       0x10 ./example/CAN/can.o
-                0x0000000000001070                CAN_error
- .text.CAN_IRQHandler
-                0x0000000000001080       0x18 ./example/CAN/can.o
-                0x0000000000001080                CAN_IRQHandler
- .text.CAN_init
-                0x0000000000001098       0x5c ./example/CAN/can.o
-                0x0000000000001098                CAN_init
- .text.Chip_GPIO_SetPinState
-                0x00000000000010f4       0x4e /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board.o)
- .text.Chip_GPIO_SetPinDIROutput
-                0x0000000000001142       0x4c /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board.o)
- .text.Board_LED_Init
-                0x000000000000118e       0x18 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board.o)
- .text.Board_LED_Set
-                0x00000000000011a6       0x32 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board.o)
-                0x00000000000011a6                Board_LED_Set
- .text.Board_Init
-                0x00000000000011d8       0x18 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board.o)
-                0x00000000000011d8                Board_Init
- .text.Chip_FMC_SetFLASHAccess
-                0x00000000000011f0       0x30 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board_sysinit.o)
- .text.Chip_Clock_SetupSystemPLL
-                0x0000000000001220       0x38 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board_sysinit.o)
- .text.Chip_Clock_IsSystemPLLLocked
-                0x0000000000001258       0x1c /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board_sysinit.o)
- .text.Chip_Clock_SetSysClockDiv
-                0x0000000000001274       0x1c /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board_sysinit.o)
- .text.Chip_Clock_EnablePeriphClock
-                0x0000000000001290       0x30 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board_sysinit.o)
+                0x0000000000000e40       0x2c ./example/UART/uart_drv.o
+ .text.NVIC_SetPriority
+                0x0000000000000e6c       0xdc ./example/UART/uart_drv.o
  .text.Chip_IOCON_PinMuxSet
-                0x00000000000012c0       0x26 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board_sysinit.o)
- .text.SystemSetupClocking
-                0x00000000000012e6       0x66 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board_sysinit.o)
- .text.SystemSetupMuxing
-                0x000000000000134c       0x4c /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board_sysinit.o)
- .text.Board_SystemInit
-                0x0000000000001398       0x12 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board_sysinit.o)
-                0x0000000000001398                Board_SystemInit
- *fill*         0x00000000000013aa        0x2 ff
- .text.SystemCoreClockUpdate
-                0x00000000000013ac       0x18 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(chip_11xx.o)
-                0x00000000000013ac                SystemCoreClockUpdate
- .text.Chip_Clock_GetMainOscRate
-                0x00000000000013c4       0x14 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(clock_11xx.o)
- .text.Chip_Clock_GetIntOscRate
-                0x00000000000013d8       0x10 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(clock_11xx.o)
- .text.Chip_Clock_GetWDTLFORate
-                0x00000000000013e8       0x48 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(clock_11xx.o)
- .text.Chip_Clock_GetPLLFreq
-                0x0000000000001430       0x22 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(clock_11xx.o)
- *fill*         0x0000000000001452        0x2 ff
- .text.Chip_Clock_SetSystemPLLSource
-                0x0000000000001454       0x2c /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(clock_11xx.o)
-                0x0000000000001454                Chip_Clock_SetSystemPLLSource
- .text.Chip_Clock_SetMainClockSource
-                0x0000000000001480       0x2c /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(clock_11xx.o)
-                0x0000000000001480                Chip_Clock_SetMainClockSource
- .text.Chip_Clock_GetWDTOSCRate
-                0x00000000000014ac       0x1c /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(clock_11xx.o)
-                0x00000000000014ac                Chip_Clock_GetWDTOSCRate
- .text.Chip_Clock_GetSystemPLLInClockRate
-                0x00000000000014c8       0x40 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(clock_11xx.o)
-                0x00000000000014c8                Chip_Clock_GetSystemPLLInClockRate
- .text.Chip_Clock_GetSystemPLLOutClockRate
-                0x0000000000001508       0x24 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(clock_11xx.o)
-                0x0000000000001508                Chip_Clock_GetSystemPLLOutClockRate
- .text.Chip_Clock_GetMainClockRate
-                0x000000000000152c       0x64 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(clock_11xx.o)
-                0x000000000000152c                Chip_Clock_GetMainClockRate
- .text.Chip_Clock_GetSystemClockRate
-                0x0000000000001590       0x24 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(clock_11xx.o)
-                0x0000000000001590                Chip_Clock_GetSystemClockRate
+                0x0000000000000f48       0x26 ./example/UART/uart_drv.o
+ .text.Chip_UART_TXEnable
+                0x0000000000000f6e       0x16 ./example/UART/uart_drv.o
+ .text.Chip_UART_IntEnable
+                0x0000000000000f84       0x1e ./example/UART/uart_drv.o
+ .text.Chip_UART_SetupFIFOS
+                0x0000000000000fa2       0x18 ./example/UART/uart_drv.o
+ .text.Chip_UART_ConfigData
+                0x0000000000000fba       0x18 ./example/UART/uart_drv.o
+ *fill*         0x0000000000000fd2        0x2 ff
+ .text.Init_UART_PinMux
+                0x0000000000000fd4       0x28 ./example/UART/uart_drv.o
+ .text.uart_init
+                0x0000000000000ffc       0x94 ./example/UART/uart_drv.o
+                0x0000000000000ffc                uart_init
+ .text.NVIC_EnableIRQ
+                0x0000000000001090       0x2c ./example/CAN/can.o
  .text.Chip_Clock_EnablePeriphClock
-                0x00000000000015b4       0x30 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(gpio_11xx_2.o)
+                0x00000000000010bc       0x30 ./example/CAN/can.o
+ .text.baudrateCalculate
+                0x00000000000010ec       0xca ./example/CAN/can.o
+                0x00000000000010ec                baudrateCalculate
+ *fill*         0x00000000000011b6        0x2 ff
+ .text.CAN_rx   0x00000000000011b8       0x68 ./example/CAN/can.o
+                0x00000000000011b8                CAN_rx
+ .text.CAN_tx   0x0000000000001220       0x20 ./example/CAN/can.o
+                0x0000000000001220                CAN_tx
+ .text.CAN_error
+                0x0000000000001240       0x10 ./example/CAN/can.o
+                0x0000000000001240                CAN_error
+ .text.CAN_IRQHandler
+                0x0000000000001250       0x18 ./example/CAN/can.o
+                0x0000000000001250                CAN_IRQHandler
+ .text.CAN_init
+                0x0000000000001268       0x5c ./example/CAN/can.o
+                0x0000000000001268                CAN_init
+ .text.Chip_GPIO_SetPinState
+                0x00000000000012c4       0x4e /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board.o)
+ .text.Chip_GPIO_SetPinDIROutput
+                0x0000000000001312       0x4c /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board.o)
+ .text.Board_LED_Init
+                0x000000000000135e       0x18 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board.o)
+ .text.Board_LED_Set
+                0x0000000000001376       0x32 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board.o)
+                0x0000000000001376                Board_LED_Set
+ .text.Board_Init
+                0x00000000000013a8       0x18 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board.o)
+                0x00000000000013a8                Board_Init
+ .text.Chip_FMC_SetFLASHAccess
+                0x00000000000013c0       0x30 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board_sysinit.o)
+ .text.Chip_Clock_SetupSystemPLL
+                0x00000000000013f0       0x38 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board_sysinit.o)
+ .text.Chip_Clock_IsSystemPLLLocked
+                0x0000000000001428       0x1c /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board_sysinit.o)
+ .text.Chip_Clock_SetSysClockDiv
+                0x0000000000001444       0x1c /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board_sysinit.o)
+ .text.Chip_Clock_EnablePeriphClock
+                0x0000000000001460       0x30 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board_sysinit.o)
+ .text.Chip_IOCON_PinMuxSet
+                0x0000000000001490       0x26 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board_sysinit.o)
+ .text.SystemSetupClocking
+                0x00000000000014b6       0x66 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board_sysinit.o)
+ .text.SystemSetupMuxing
+                0x000000000000151c       0x4c /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board_sysinit.o)
+ .text.Board_SystemInit
+                0x0000000000001568       0x12 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board_sysinit.o)
+                0x0000000000001568                Board_SystemInit
+ *fill*         0x000000000000157a        0x2 ff
+ .text.SystemCoreClockUpdate
+                0x000000000000157c       0x18 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(chip_11xx.o)
+                0x000000000000157c                SystemCoreClockUpdate
+ .text.Chip_Clock_GetMainOscRate
+                0x0000000000001594       0x14 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(clock_11xx.o)
+ .text.Chip_Clock_GetIntOscRate
+                0x00000000000015a8       0x10 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(clock_11xx.o)
+ .text.Chip_Clock_GetWDTLFORate
+                0x00000000000015b8       0x48 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(clock_11xx.o)
+ .text.Chip_Clock_GetPLLFreq
+                0x0000000000001600       0x22 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(clock_11xx.o)
+ *fill*         0x0000000000001622        0x2 ff
+ .text.Chip_Clock_SetSystemPLLSource
+                0x0000000000001624       0x2c /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(clock_11xx.o)
+                0x0000000000001624                Chip_Clock_SetSystemPLLSource
+ .text.Chip_Clock_SetMainClockSource
+                0x0000000000001650       0x2c /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(clock_11xx.o)
+                0x0000000000001650                Chip_Clock_SetMainClockSource
+ .text.Chip_Clock_GetWDTOSCRate
+                0x000000000000167c       0x1c /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(clock_11xx.o)
+                0x000000000000167c                Chip_Clock_GetWDTOSCRate
+ .text.Chip_Clock_GetSystemPLLInClockRate
+                0x0000000000001698       0x40 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(clock_11xx.o)
+                0x0000000000001698                Chip_Clock_GetSystemPLLInClockRate
+ .text.Chip_Clock_GetSystemPLLOutClockRate
+                0x00000000000016d8       0x24 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(clock_11xx.o)
+                0x00000000000016d8                Chip_Clock_GetSystemPLLOutClockRate
+ .text.Chip_Clock_GetMainClockRate
+                0x00000000000016fc       0x64 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(clock_11xx.o)
+                0x00000000000016fc                Chip_Clock_GetMainClockRate
+ .text.Chip_Clock_GetSystemClockRate
+                0x0000000000001760       0x24 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(clock_11xx.o)
+                0x0000000000001760                Chip_Clock_GetSystemClockRate
+ .text.Chip_Clock_EnablePeriphClock
+                0x0000000000001784       0x30 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(gpio_11xx_2.o)
  .text.Chip_GPIO_Init
-                0x00000000000015e4       0x16 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(gpio_11xx_2.o)
-                0x00000000000015e4                Chip_GPIO_Init
- *fill*         0x00000000000015fa        0x2 ff
+                0x00000000000017b4       0x16 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(gpio_11xx_2.o)
+                0x00000000000017b4                Chip_GPIO_Init
+ .text.RingBuffer_Init
+                0x00000000000017ca       0x38 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(ring_buffer.o)
+                0x00000000000017ca                RingBuffer_Init
+ *fill*         0x0000000000001802        0x2 ff
  .text.Chip_SYSCTL_PowerDown
-                0x00000000000015fc       0x40 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(sysctl_11xx.o)
-                0x00000000000015fc                Chip_SYSCTL_PowerDown
+                0x0000000000001804       0x40 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(sysctl_11xx.o)
+                0x0000000000001804                Chip_SYSCTL_PowerDown
  .text.Chip_SYSCTL_PowerUp
-                0x000000000000163c       0x40 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(sysctl_11xx.o)
-                0x000000000000163c                Chip_SYSCTL_PowerUp
- .text          0x000000000000167c      0x114 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
-                0x000000000000167c                __udivsi3
-                0x000000000000167c                __aeabi_uidiv
-                0x0000000000001788                __aeabi_uidivmod
- .text          0x0000000000001790        0x4 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
-                0x0000000000001790                __aeabi_ldiv0
-                0x0000000000001790                __aeabi_idiv0
- .text.memcmp   0x0000000000001794       0x1c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memcmp.o)
-                0x0000000000001794                memcmp
- .text.memset   0x00000000000017b0       0x10 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memset.o)
-                0x00000000000017b0                memset
- .text.printf   0x00000000000017c0       0x34 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-printf.o)
-                0x00000000000017c0                printf
-                0x00000000000017c0                iprintf
- .text._puts_r  0x00000000000017f4       0xe4 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-puts.o)
-                0x00000000000017f4                _puts_r
- .text.puts     0x00000000000018d8       0x14 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-puts.o)
-                0x00000000000018d8                puts
- .text.strncpy  0x00000000000018ec       0x28 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-strncpy.o)
-                0x00000000000018ec                strncpy
+                0x0000000000001844       0x40 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(sysctl_11xx.o)
+                0x0000000000001844                Chip_SYSCTL_PowerUp
+ .text.Chip_Clock_EnablePeriphClock
+                0x0000000000001884       0x30 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
+ .text.Chip_Clock_SetUARTClockDiv
+                0x00000000000018b4       0x1c /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
+ .text.Chip_UART_SendByte
+                0x00000000000018d0       0x1e /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
+ .text.Chip_UART_SetupFIFOS
+                0x00000000000018ee       0x18 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
+ .text.Chip_UART_ConfigData
+                0x0000000000001906       0x18 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
+ .text.Chip_UART_EnableDivisorAccess
+                0x000000000000191e       0x1c /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
+ .text.Chip_UART_DisableDivisorAccess
+                0x000000000000193a       0x1e /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
+ .text.Chip_UART_SetDivisorLatches
+                0x0000000000001958       0x30 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
+ .text.Chip_UART_ReadLineStatus
+                0x0000000000001988       0x14 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
+ .text.Chip_UART_Init
+                0x000000000000199c       0x36 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
+                0x000000000000199c                Chip_UART_Init
+ .text.Chip_UART_Send
+                0x00000000000019d2       0x52 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
+                0x00000000000019d2                Chip_UART_Send
+ .text.Chip_UART_SendBlocking
+                0x0000000000001a24       0x4e /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
+                0x0000000000001a24                Chip_UART_SendBlocking
+ .text.Chip_UART_SetBaud
+                0x0000000000001a72       0x64 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
+                0x0000000000001a72                Chip_UART_SetBaud
+ *fill*         0x0000000000001ad6        0x2 ff
+ .text          0x0000000000001ad8      0x114 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+                0x0000000000001ad8                __udivsi3
+                0x0000000000001ad8                __aeabi_uidiv
+                0x0000000000001be4                __aeabi_uidivmod
+ .text          0x0000000000001bec        0x4 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+                0x0000000000001bec                __aeabi_ldiv0
+                0x0000000000001bec                __aeabi_idiv0
+ .text.memcmp   0x0000000000001bf0       0x1c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memcmp.o)
+                0x0000000000001bf0                memcmp
+ .text.memset   0x0000000000001c0c       0x10 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memset.o)
+                0x0000000000001c0c                memset
+ .text.printf   0x0000000000001c1c       0x34 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-printf.o)
+                0x0000000000001c1c                printf
+                0x0000000000001c1c                iprintf
+ .text._puts_r  0x0000000000001c50       0xe4 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-puts.o)
+                0x0000000000001c50                _puts_r
+ .text.puts     0x0000000000001d34       0x14 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-puts.o)
+                0x0000000000001d34                puts
+ .text.strncpy  0x0000000000001d48       0x28 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-strncpy.o)
+                0x0000000000001d48                strncpy
  .text.__swbuf_r
-                0x0000000000001914       0xac /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-wbuf.o)
-                0x0000000000001914                __swbuf_r
+                0x0000000000001d70       0xac /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-wbuf.o)
+                0x0000000000001d70                __swbuf_r
  .text.__swsetup_r
-                0x00000000000019c0       0xf0 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-wsetup.o)
-                0x00000000000019c0                __swsetup_r
+                0x0000000000001e1c       0xf0 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-wsetup.o)
+                0x0000000000001e1c                __swsetup_r
  .text.__sflush_r
-                0x0000000000001ab0      0x118 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-fflush.o)
-                0x0000000000001ab0                __sflush_r
+                0x0000000000001f0c      0x118 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-fflush.o)
+                0x0000000000001f0c                __sflush_r
  .text._fflush_r
-                0x0000000000001bc8       0x80 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-fflush.o)
-                0x0000000000001bc8                _fflush_r
- .text.std      0x0000000000001c48       0x48 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-findfp.o)
+                0x0000000000002024       0x80 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-fflush.o)
+                0x0000000000002024                _fflush_r
+ .text.std      0x00000000000020a4       0x48 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-findfp.o)
  .text._cleanup_r
-                0x0000000000001c90       0x10 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-findfp.o)
-                0x0000000000001c90                _cleanup_r
+                0x00000000000020ec       0x10 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-findfp.o)
+                0x00000000000020ec                _cleanup_r
  .text.__sfmoreglue
-                0x0000000000001ca0       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-findfp.o)
-                0x0000000000001ca0                __sfmoreglue
+                0x00000000000020fc       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-findfp.o)
+                0x00000000000020fc                __sfmoreglue
  .text.__sfp_lock_acquire
-                0x0000000000001ccc       0x10 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-findfp.o)
-                0x0000000000001ccc                __sfp_lock_acquire
+                0x0000000000002128       0x10 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-findfp.o)
+                0x0000000000002128                __sfp_lock_acquire
  .text.__sfp_lock_release
-                0x0000000000001cdc       0x10 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-findfp.o)
-                0x0000000000001cdc                __sfp_lock_release
+                0x0000000000002138       0x10 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-findfp.o)
+                0x0000000000002138                __sfp_lock_release
  .text.__sinit_lock_acquire
-                0x0000000000001cec       0x10 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-findfp.o)
-                0x0000000000001cec                __sinit_lock_acquire
+                0x0000000000002148       0x10 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-findfp.o)
+                0x0000000000002148                __sinit_lock_acquire
  .text.__sinit_lock_release
-                0x0000000000001cfc       0x10 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-findfp.o)
-                0x0000000000001cfc                __sinit_lock_release
- .text.__sinit  0x0000000000001d0c       0x70 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-findfp.o)
-                0x0000000000001d0c                __sinit
- .text.__sfp    0x0000000000001d7c       0x90 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-findfp.o)
-                0x0000000000001d7c                __sfp
+                0x0000000000002158       0x10 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-findfp.o)
+                0x0000000000002158                __sinit_lock_release
+ .text.__sinit  0x0000000000002168       0x70 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-findfp.o)
+                0x0000000000002168                __sinit
+ .text.__sfp    0x00000000000021d8       0x90 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-findfp.o)
+                0x00000000000021d8                __sfp
  .text._fwalk_reent
-                0x0000000000001e0c       0x40 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-fwalk.o)
-                0x0000000000001e0c                _fwalk_reent
+                0x0000000000002268       0x40 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-fwalk.o)
+                0x0000000000002268                _fwalk_reent
  .text.__retarget_lock_init_recursive
-                0x0000000000001e4c        0x2 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-lock.o)
-                0x0000000000001e4c                __retarget_lock_init_recursive
+                0x00000000000022a8        0x2 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-lock.o)
+                0x00000000000022a8                __retarget_lock_init_recursive
  .text.__retarget_lock_acquire_recursive
-                0x0000000000001e4e        0x2 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-lock.o)
-                0x0000000000001e4e                __retarget_lock_acquire_recursive
+                0x00000000000022aa        0x2 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-lock.o)
+                0x00000000000022aa                __retarget_lock_acquire_recursive
  .text.__retarget_lock_release_recursive
-                0x0000000000001e50        0x2 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-lock.o)
-                0x0000000000001e50                __retarget_lock_release_recursive
- *fill*         0x0000000000001e52        0x2 ff
+                0x00000000000022ac        0x2 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-lock.o)
+                0x00000000000022ac                __retarget_lock_release_recursive
+ *fill*         0x00000000000022ae        0x2 ff
  .text.__swhatbuf_r
-                0x0000000000001e54       0x50 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-makebuf.o)
-                0x0000000000001e54                __swhatbuf_r
+                0x00000000000022b0       0x50 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-makebuf.o)
+                0x00000000000022b0                __swhatbuf_r
  .text.__smakebuf_r
-                0x0000000000001ea4       0x88 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-makebuf.o)
-                0x0000000000001ea4                __smakebuf_r
- .text._free_r  0x0000000000001f2c       0x94 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-nano-freer.o)
-                0x0000000000001f2c                _free_r
+                0x0000000000002300       0x88 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-makebuf.o)
+                0x0000000000002300                __smakebuf_r
+ .text._free_r  0x0000000000002388       0x94 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-nano-freer.o)
+                0x0000000000002388                _free_r
  .text._malloc_r
-                0x0000000000001fc0       0xbc /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-nano-mallocr.o)
-                0x0000000000001fc0                _malloc_r
+                0x000000000000241c       0xbc /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-nano-mallocr.o)
+                0x000000000000241c                _malloc_r
  .text.__sfputc_r
-                0x000000000000207c       0x2a /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-nano-vfprintf.o)
+                0x00000000000024d8       0x2a /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-nano-vfprintf.o)
  .text.__sfputs_r
-                0x00000000000020a6       0x24 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-nano-vfprintf.o)
-                0x00000000000020a6                __sfputs_r
- *fill*         0x00000000000020ca        0x2 ff
+                0x0000000000002502       0x24 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-nano-vfprintf.o)
+                0x0000000000002502                __sfputs_r
+ *fill*         0x0000000000002526        0x2 ff
  .text._vfprintf_r
-                0x00000000000020cc      0x274 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-nano-vfprintf.o)
-                0x00000000000020cc                _vfiprintf_r
-                0x00000000000020cc                _vfprintf_r
+                0x0000000000002528      0x274 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-nano-vfprintf.o)
+                0x0000000000002528                _vfiprintf_r
+                0x0000000000002528                _vfprintf_r
  .text._printf_common
-                0x0000000000002340       0xde /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-nano-vfprintf_i.o)
-                0x0000000000002340                _printf_common
- *fill*         0x000000000000241e        0x2 ff
+                0x000000000000279c       0xde /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-nano-vfprintf_i.o)
+                0x000000000000279c                _printf_common
+ *fill*         0x000000000000287a        0x2 ff
  .text._printf_i
-                0x0000000000002420      0x224 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-nano-vfprintf_i.o)
-                0x0000000000002420                _printf_i
- .text._sbrk_r  0x0000000000002644       0x24 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-sbrkr.o)
-                0x0000000000002644                _sbrk_r
- .text.__sread  0x0000000000002668       0x28 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-stdio.o)
-                0x0000000000002668                __sread
+                0x000000000000287c      0x224 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-nano-vfprintf_i.o)
+                0x000000000000287c                _printf_i
+ .text._sbrk_r  0x0000000000002aa0       0x24 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-sbrkr.o)
+                0x0000000000002aa0                _sbrk_r
+ .text.__sread  0x0000000000002ac4       0x28 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-stdio.o)
+                0x0000000000002ac4                __sread
  .text.__swrite
-                0x0000000000002690       0x38 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-stdio.o)
-                0x0000000000002690                __swrite
- .text.__sseek  0x00000000000026c8       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-stdio.o)
-                0x00000000000026c8                __sseek
+                0x0000000000002aec       0x38 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-stdio.o)
+                0x0000000000002aec                __swrite
+ .text.__sseek  0x0000000000002b24       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-stdio.o)
+                0x0000000000002b24                __sseek
  .text.__sclose
-                0x00000000000026f4        0xc /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-stdio.o)
-                0x00000000000026f4                __sclose
+                0x0000000000002b50        0xc /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-stdio.o)
+                0x0000000000002b50                __sclose
  .text._write_r
-                0x0000000000002700       0x28 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-writer.o)
-                0x0000000000002700                _write_r
+                0x0000000000002b5c       0x28 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-writer.o)
+                0x0000000000002b5c                _write_r
  .text._close_r
-                0x0000000000002728       0x24 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-closer.o)
-                0x0000000000002728                _close_r
+                0x0000000000002b84       0x24 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-closer.o)
+                0x0000000000002b84                _close_r
  .text._fstat_r
-                0x000000000000274c       0x24 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-fstatr.o)
-                0x000000000000274c                _fstat_r
+                0x0000000000002ba8       0x24 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-fstatr.o)
+                0x0000000000002ba8                _fstat_r
  .text._isatty_r
-                0x0000000000002770       0x24 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-isattyr.o)
-                0x0000000000002770                _isatty_r
+                0x0000000000002bcc       0x24 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-isattyr.o)
+                0x0000000000002bcc                _isatty_r
  .text._lseek_r
-                0x0000000000002794       0x28 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-lseekr.o)
-                0x0000000000002794                _lseek_r
- .text.memchr   0x00000000000027bc       0x16 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memchr-stub.o)
-                0x00000000000027bc                memchr
- *fill*         0x00000000000027d2        0x2 ff
+                0x0000000000002bf0       0x28 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-lseekr.o)
+                0x0000000000002bf0                _lseek_r
+ .text.memchr   0x0000000000002c18       0x16 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memchr-stub.o)
+                0x0000000000002c18                memchr
+ *fill*         0x0000000000002c2e        0x2 ff
  .text.__malloc_lock
-                0x00000000000027d4       0x10 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-mlock.o)
-                0x00000000000027d4                __malloc_lock
+                0x0000000000002c30       0x10 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-mlock.o)
+                0x0000000000002c30                __malloc_lock
  .text.__malloc_unlock
-                0x00000000000027e4       0x10 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-mlock.o)
-                0x00000000000027e4                __malloc_unlock
- .text._read_r  0x00000000000027f4       0x28 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-readr.o)
-                0x00000000000027f4                _read_r
- .text._sbrk    0x000000000000281c       0x40 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(_cr_sbrk.o)
-                0x000000000000281c                _sbrk
- .text.error    0x000000000000285c       0x1c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(syscalls.o)
+                0x0000000000002c40       0x10 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-mlock.o)
+                0x0000000000002c40                __malloc_unlock
+ .text._read_r  0x0000000000002c50       0x28 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-readr.o)
+                0x0000000000002c50                _read_r
+ .text._sbrk    0x0000000000002c78       0x40 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(_cr_sbrk.o)
+                0x0000000000002c78                _sbrk
+ .text.error    0x0000000000002cb8       0x1c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(syscalls.o)
  .text.initialise_monitor_handles
-                0x0000000000002878       0xa0 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(syscalls.o)
+                0x0000000000002cd4       0xa0 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(syscalls.o)
  .text.findslot
-                0x0000000000002918       0x24 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(syscalls.o)
+                0x0000000000002d74       0x24 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(syscalls.o)
  .text.checkerror
-                0x000000000000293c       0x20 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(syscalls.o)
+                0x0000000000002d98       0x20 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(syscalls.o)
  .text._swiread
-                0x000000000000295c       0x20 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(syscalls.o)
-                0x000000000000295c                _swiread
- .text._read    0x000000000000297c       0x34 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(syscalls.o)
-                0x000000000000297c                _read
+                0x0000000000002db8       0x20 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(syscalls.o)
+                0x0000000000002db8                _swiread
+ .text._read    0x0000000000002dd8       0x34 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(syscalls.o)
+                0x0000000000002dd8                _read
  .text._swilseek
-                0x00000000000029b0       0x76 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(syscalls.o)
-                0x00000000000029b0                _swilseek
- .text._lseek   0x0000000000002a26        0x8 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(syscalls.o)
-                0x0000000000002a26                _lseek
+                0x0000000000002e0c       0x76 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(syscalls.o)
+                0x0000000000002e0c                _swilseek
+ .text._lseek   0x0000000000002e82        0x8 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(syscalls.o)
+                0x0000000000002e82                _lseek
  .text._swiwrite
-                0x0000000000002a2e       0x20 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(syscalls.o)
-                0x0000000000002a2e                _swiwrite
- .text._write   0x0000000000002a4e       0x3e /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(syscalls.o)
-                0x0000000000002a4e                _write
+                0x0000000000002e8a       0x20 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(syscalls.o)
+                0x0000000000002e8a                _swiwrite
+ .text._write   0x0000000000002eaa       0x3e /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(syscalls.o)
+                0x0000000000002eaa                _write
  .text._swiclose
-                0x0000000000002a8c       0x18 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(syscalls.o)
-                0x0000000000002a8c                _swiclose
- .text._close   0x0000000000002aa4       0x4c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(syscalls.o)
-                0x0000000000002aa4                _close
+                0x0000000000002ee8       0x18 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(syscalls.o)
+                0x0000000000002ee8                _swiclose
+ .text._close   0x0000000000002f00       0x4c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(syscalls.o)
+                0x0000000000002f00                _close
  .text._swistat
-                0x0000000000002af0       0x44 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(syscalls.o)
-                0x0000000000002af0                _swistat
- .text._fstat   0x0000000000002b34       0x1a /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(syscalls.o)
-                0x0000000000002b34                _fstat
- .text._isatty  0x0000000000002b4e       0x28 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(syscalls.o)
-                0x0000000000002b4e                _isatty
- *fill*         0x0000000000002b76        0x2 ff
+                0x0000000000002f4c       0x44 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(syscalls.o)
+                0x0000000000002f4c                _swistat
+ .text._fstat   0x0000000000002f90       0x1a /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(syscalls.o)
+                0x0000000000002f90                _fstat
+ .text._isatty  0x0000000000002faa       0x28 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(syscalls.o)
+                0x0000000000002faa                _isatty
+ *fill*         0x0000000000002fd2        0x2 ff
  .text.__check_heap_overflow
-                0x0000000000002b78       0x14 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(_cr_check_heap.o)
-                0x0000000000002b78                __check_heap_overflow
- .text          0x0000000000002b8c       0x14 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_thumb1_case_shi.o)
-                0x0000000000002b8c                __gnu_thumb1_case_shi
- .text.__errno  0x0000000000002ba0        0xc /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-errno.o)
-                0x0000000000002ba0                __errno
+                0x0000000000002fd4       0x14 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(_cr_check_heap.o)
+                0x0000000000002fd4                __check_heap_overflow
+ .text          0x0000000000002fe8       0x14 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_thumb1_case_shi.o)
+                0x0000000000002fe8                __gnu_thumb1_case_shi
+ .text.__errno  0x0000000000002ffc        0xc /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-errno.o)
+                0x0000000000002ffc                __errno
  */tasks.o(.rodata*)
  .rodata.vTaskStartScheduler.str1.4
-                0x0000000000002bac        0x5 ./freertos/src/tasks.o
- *fill*         0x0000000000002bb1        0x3 ff
+                0x0000000000003008        0x5 ./freertos/src/tasks.o
+ *fill*         0x000000000000300d        0x3 ff
  .rodata.vTaskList.str1.4
-                0x0000000000002bb4        0x3 ./freertos/src/tasks.o
- *fill*         0x0000000000002bb7        0x1 ff
+                0x0000000000003010        0x3 ./freertos/src/tasks.o
+ *fill*         0x0000000000003013        0x1 ff
  .rodata.prvListTaskWithinSingleList.str1.4
-                0x0000000000002bb8       0x12 ./freertos/src/tasks.o
- *fill*         0x0000000000002bca        0x2 ff
+                0x0000000000003014       0x12 ./freertos/src/tasks.o
+ *fill*         0x0000000000003026        0x2 ff
  .rodata.ucExpectedStackBytes.7628
-                0x0000000000002bcc       0x14 ./freertos/src/tasks.o
+                0x0000000000003028       0x14 ./freertos/src/tasks.o
  *(.rodata .rodata.* .constdata .constdata.*)
  .rodata.vApplicationMallocFailedHook.str1.4
-                0x0000000000002be0       0x26 ./freertos/src/FreeRTOSCommonHooks.o
- *fill*         0x0000000000002c06        0x2 ff
+                0x000000000000303c       0x26 ./freertos/src/FreeRTOSCommonHooks.o
+ *fill*         0x0000000000003062        0x2 ff
  .rodata.vApplicationStackOverflowHook.str1.4
-                0x0000000000002c08       0x30 ./freertos/src/FreeRTOSCommonHooks.o
+                0x0000000000003064       0x30 ./freertos/src/FreeRTOSCommonHooks.o
  .rodata.blinkLed.str1.4
-                0x0000000000002c38       0x13 ./example/src/freertos_blinky.o
- *fill*         0x0000000000002c4b        0x1 ff
+                0x0000000000003094       0x13 ./example/src/freertos_blinky.o
+ *fill*         0x00000000000030a7        0x1 ff
  .rodata.main.str1.4
-                0x0000000000002c4c       0x30 ./example/src/freertos_blinky.o
+                0x00000000000030a8       0x1c ./example/src/freertos_blinky.o
+ .rodata.inst1  0x00000000000030c4       0x1f ./example/UART/uart_drv.o
+ *fill*         0x00000000000030e3        0x1 ff
  .rodata.CAN_rx.str1.4
-                0x0000000000002c7c        0xf ./example/CAN/can.o
- *fill*         0x0000000000002c8b        0x1 ff
+                0x00000000000030e4        0xf ./example/CAN/can.o
+ *fill*         0x00000000000030f3        0x1 ff
  .rodata.CAN_tx.str1.4
-                0x0000000000002c8c        0xf ./example/CAN/can.o
- *fill*         0x0000000000002c9b        0x1 ff
- .rodata        0x0000000000002c9c       0x20 ./example/CAN/can.o
+                0x00000000000030f4        0xf ./example/CAN/can.o
+ *fill*         0x0000000000003103        0x1 ff
+ .rodata        0x0000000000003104       0x20 ./example/CAN/can.o
  .rodata.OscRateIn
-                0x0000000000002cbc        0x4 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board.o)
-                0x0000000000002cbc                OscRateIn
+                0x0000000000003124        0x4 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board.o)
+                0x0000000000003124                OscRateIn
  .rodata.pinmuxing
-                0x0000000000002cc0       0x28 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board_sysinit.o)
+                0x0000000000003128       0x28 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board_sysinit.o)
  .rodata.wdtOSCRate
-                0x0000000000002ce8       0x40 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(clock_11xx.o)
+                0x0000000000003150       0x40 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(clock_11xx.o)
  .rodata.__sf_fake_stderr
-                0x0000000000002d28       0x20 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-findfp.o)
-                0x0000000000002d28                __sf_fake_stderr
+                0x0000000000003190       0x20 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-findfp.o)
+                0x0000000000003190                __sf_fake_stderr
  .rodata.__sf_fake_stdin
-                0x0000000000002d48       0x20 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-findfp.o)
-                0x0000000000002d48                __sf_fake_stdin
+                0x00000000000031b0       0x20 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-findfp.o)
+                0x00000000000031b0                __sf_fake_stdin
  .rodata.__sf_fake_stdout
-                0x0000000000002d68       0x20 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-findfp.o)
-                0x0000000000002d68                __sf_fake_stdout
+                0x00000000000031d0       0x20 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-findfp.o)
+                0x00000000000031d0                __sf_fake_stdout
  .rodata._global_impure_ptr
-                0x0000000000002d88        0x4 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-impure.o)
-                0x0000000000002d88                _global_impure_ptr
+                0x00000000000031f0        0x4 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-impure.o)
+                0x00000000000031f0                _global_impure_ptr
  .rodata._vfprintf_r.str1.1
-                0x0000000000002d8c       0x11 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-nano-vfprintf.o)
+                0x00000000000031f4       0x11 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-nano-vfprintf.o)
  .rodata._printf_i.str1.1
-                0x0000000000002d9d       0x22 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-nano-vfprintf_i.o)
+                0x0000000000003205       0x22 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-nano-vfprintf_i.o)
  .rodata.initialise_monitor_handles.str1.1
-                0x0000000000002dbf        0x4 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(syscalls.o)
-                0x0000000000002dc4                . = ALIGN (0x4)
- *fill*         0x0000000000002dc3        0x1 ff
+                0x0000000000003227        0x4 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(syscalls.o)
+                0x000000000000322c                . = ALIGN (0x4)
+ *fill*         0x000000000000322b        0x1 ff
 
-.glue_7         0x0000000000002dc4        0x0
- .glue_7        0x0000000000002dc4        0x0 linker stubs
+.glue_7         0x000000000000322c        0x0
+ .glue_7        0x000000000000322c        0x0 linker stubs
 
-.glue_7t        0x0000000000002dc4        0x0
- .glue_7t       0x0000000000002dc4        0x0 linker stubs
+.glue_7t        0x000000000000322c        0x0
+ .glue_7t       0x000000000000322c        0x0 linker stubs
 
-.vfp11_veneer   0x0000000000002dc4        0x0
- .vfp11_veneer  0x0000000000002dc4        0x0 linker stubs
+.vfp11_veneer   0x000000000000322c        0x0
+ .vfp11_veneer  0x000000000000322c        0x0 linker stubs
 
-.v4_bx          0x0000000000002dc4        0x0
- .v4_bx         0x0000000000002dc4        0x0 linker stubs
+.v4_bx          0x000000000000322c        0x0
+ .v4_bx         0x000000000000322c        0x0 linker stubs
 
-.iplt           0x0000000000002dc4        0x0
- .iplt          0x0000000000002dc4        0x0 ./freertos/src/FreeRTOSCommonHooks.o
+.iplt           0x000000000000322c        0x0
+ .iplt          0x000000000000322c        0x0 ./freertos/src/FreeRTOSCommonHooks.o
 
-.rel.dyn        0x0000000000002dc4        0x0
- .rel.iplt      0x0000000000002dc4        0x0 ./freertos/src/FreeRTOSCommonHooks.o
+.rel.dyn        0x000000000000322c        0x0
+ .rel.iplt      0x000000000000322c        0x0 ./freertos/src/FreeRTOSCommonHooks.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
 
-.ARM.exidx      0x0000000000002dc4        0x0
-                0x0000000000002dc4                __exidx_start = .
+.ARM.exidx      0x000000000000322c        0x0
+                0x000000000000322c                __exidx_start = .
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x0000000000002dc4                __exidx_end = .
-                0x0000000000002dc4                _etext = .
+                0x000000000000322c                __exidx_end = .
+                0x000000000000322c                _etext = .
 
 .uninit_RESERVED
                 0x0000000010000000        0x0
@@ -3326,7 +3301,7 @@ END GROUP
                 0x0000000010000000                . = ALIGN (0x4)
                 0x0000000010000000                _end_uninit_RESERVED = .
 
-.data           0x0000000010000000       0x6c load address 0x0000000000002dc4
+.data           0x0000000010000000       0x6c load address 0x000000000000322c
  FILL mask 0xff
                 0x0000000010000000                _data = .
                 [!provide]                        PROVIDE (__start_data_RAM = .)
@@ -3351,10 +3326,10 @@ END GROUP
                 [!provide]                        PROVIDE (__end_data_RAM = .)
                 [!provide]                        PROVIDE (__end_data_RamLoc8 = .)
 
-.igot.plt       0x000000001000006c        0x0 load address 0x0000000000002e30
+.igot.plt       0x000000001000006c        0x0 load address 0x0000000000003298
  .igot.plt      0x000000001000006c        0x0 ./freertos/src/FreeRTOSCommonHooks.o
 
-.bss            0x000000001000006c      0x7b0
+.bss            0x000000001000006c      0x8d8
                 0x000000001000006c                _bss = .
                 [!provide]                        PROVIDE (__start_bss_RAM = .)
                 [!provide]                        PROVIDE (__start_bss_RamLoc8 = .)
@@ -3405,84 +3380,91 @@ END GROUP
                 0x00000000100007a8        0x4 ./freertos/src/tasks.o
  .bss.uxTaskNumber
                 0x00000000100007ac        0x4 ./freertos/src/tasks.o
+ .bss.txring    0x00000000100007b0       0x14 ./example/UART/uart_drv.o
+ .bss.rxring    0x00000000100007c4       0x14 ./example/UART/uart_drv.o
+ .bss.rxbuff    0x00000000100007d8       0x80 ./example/UART/uart_drv.o
+ .bss.txbuff    0x0000000010000858       0x80 ./example/UART/uart_drv.o
  .bss.__malloc_free_list
-                0x00000000100007b0        0x4 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-nano-mallocr.o)
-                0x00000000100007b0                __malloc_free_list
+                0x00000000100008d8        0x4 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-nano-mallocr.o)
+                0x00000000100008d8                __malloc_free_list
  .bss.__malloc_sbrk_start
-                0x00000000100007b4        0x4 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-nano-mallocr.o)
-                0x00000000100007b4                __malloc_sbrk_start
+                0x00000000100008dc        0x4 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-nano-mallocr.o)
+                0x00000000100008dc                __malloc_sbrk_start
  .bss.__end_of_heap
-                0x00000000100007b8        0x4 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(_cr_sbrk.o)
-                0x00000000100007b8                __end_of_heap
+                0x00000000100008e0        0x4 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(_cr_sbrk.o)
+                0x00000000100008e0                __end_of_heap
  .bss.initialized.5714
-                0x00000000100007bc        0x4 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(syscalls.o)
+                0x00000000100008e4        0x4 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(syscalls.o)
  .bss.monitor_stderr
-                0x00000000100007c0        0x4 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(syscalls.o)
+                0x00000000100008e8        0x4 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(syscalls.o)
  .bss.monitor_stdin
-                0x00000000100007c4        0x4 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(syscalls.o)
+                0x00000000100008ec        0x4 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(syscalls.o)
  .bss.monitor_stdout
-                0x00000000100007c8        0x4 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(syscalls.o)
+                0x00000000100008f0        0x4 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(syscalls.o)
  .bss.openfiles
-                0x00000000100007cc       0x28 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(syscalls.o)
+                0x00000000100008f4       0x28 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(syscalls.o)
  *(COMMON)
- COMMON         0x00000000100007f4       0x14 ./example/CAN/can.o
-                0x00000000100007f4                msg_obj
- COMMON         0x0000000010000808        0x4 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(chip_11xx.o)
-                0x0000000010000808                SystemCoreClock
- COMMON         0x000000001000080c        0x9 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-lock.o)
-                0x000000001000080c                __lock___atexit_recursive_mutex
-                0x000000001000080d                __lock___arc4random_mutex
-                0x000000001000080e                __lock___env_recursive_mutex
-                0x000000001000080f                __lock___sinit_recursive_mutex
-                0x0000000010000810                __lock___malloc_recursive_mutex
-                0x0000000010000811                __lock___at_quick_exit_mutex
-                0x0000000010000812                __lock___dd_hash_mutex
-                0x0000000010000813                __lock___tz_mutex
-                0x0000000010000814                __lock___sfp_recursive_mutex
- *fill*         0x0000000010000815        0x3 
- COMMON         0x0000000010000818        0x4 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-reent.o)
-                0x0000000010000818                errno
-                0x000000001000081c                . = ALIGN (0x4)
-                0x000000001000081c                _ebss = .
+ COMMON         0x000000001000091c       0x14 ./example/CAN/can.o
+                0x000000001000091c                msg_obj
+ COMMON         0x0000000010000930        0x4 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(chip_11xx.o)
+                0x0000000010000930                SystemCoreClock
+ COMMON         0x0000000010000934        0x9 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-lock.o)
+                0x0000000010000934                __lock___atexit_recursive_mutex
+                0x0000000010000935                __lock___arc4random_mutex
+                0x0000000010000936                __lock___env_recursive_mutex
+                0x0000000010000937                __lock___sinit_recursive_mutex
+                0x0000000010000938                __lock___malloc_recursive_mutex
+                0x0000000010000939                __lock___at_quick_exit_mutex
+                0x000000001000093a                __lock___dd_hash_mutex
+                0x000000001000093b                __lock___tz_mutex
+                0x000000001000093c                __lock___sfp_recursive_mutex
+ *fill*         0x000000001000093d        0x3 
+ COMMON         0x0000000010000940        0x4 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-reent.o)
+                0x0000000010000940                errno
+                0x0000000010000944                . = ALIGN (0x4)
+                0x0000000010000944                _ebss = .
                 [!provide]                        PROVIDE (__end_bss_RAM = .)
                 [!provide]                        PROVIDE (__end_bss_RamLoc8 = .)
                 [!provide]                        PROVIDE (end = .)
 
-.noinit         0x000000001000081c        0x0
-                0x000000001000081c                _noinit = .
+.noinit         0x0000000010000944        0x0
+                0x0000000010000944                _noinit = .
                 [!provide]                        PROVIDE (__start_noinit_RAM = .)
                 [!provide]                        PROVIDE (__start_noinit_RamLoc8 = .)
  *(.noinit*)
-                0x000000001000081c                . = ALIGN (0x4)
-                0x000000001000081c                _end_noinit = .
+                0x0000000010000944                . = ALIGN (0x4)
+                0x0000000010000944                _end_noinit = .
                 [!provide]                        PROVIDE (__end_noinit_RAM = .)
                 [!provide]                        PROVIDE (__end_noinit_RamLoc8 = .)
-                0x000000001000081c                PROVIDE (_pvHeapStart = DEFINED (__user_heap_base)?__user_heap_base:.)
+                0x0000000010000944                PROVIDE (_pvHeapStart = DEFINED (__user_heap_base)?__user_heap_base:.)
                 0x0000000010002000                PROVIDE (_vStackTop = DEFINED (__user_stack_top)?__user_stack_top:(__top_RamLoc8 - 0x0))
                 [!provide]                        PROVIDE (__valid_user_code_checksum = (0x0 - (((_vStackTop + (ResetISR + 0x1)) + (DEFINED (NMI_Handler)?NMI_Handler:M0_NMI_Handler + 0x1)) + (DEFINED (HardFault_Handler)?HardFault_Handler:M0_HardFault_Handler + 0x1))))
                 0x0000000000000000                _image_start = LOADADDR (.text)
-                0x0000000000002e30                _image_end = (LOADADDR (.data) + SIZEOF (.data))
-                0x0000000000002e30                _image_size = (_image_end - _image_start)
+                0x0000000000003298                _image_end = (LOADADDR (.data) + SIZEOF (.data))
+                0x0000000000003298                _image_size = (_image_end - _image_start)
 OUTPUT(nxp_lpcxpresso_11c24_freertos_blinky.axf elf32-littlearm)
 
-.debug_info     0x0000000000000000     0xb58b
+.debug_info     0x0000000000000000     0xe377
  .debug_info    0x0000000000000000      0xa3e ./freertos/src/FreeRTOSCommonHooks.o
  .debug_info    0x0000000000000a3e      0xa55 ./freertos/src/heap_1.o
  .debug_info    0x0000000000001493      0xb9b ./freertos/src/list.o
  .debug_info    0x000000000000202e      0xab6 ./freertos/src/port.o
  .debug_info    0x0000000000002ae4     0x18c2 ./freertos/src/tasks.o
  .debug_info    0x00000000000043a6      0x2aa ./example/src/cr_startup_lpc11xx.o
- .debug_info    0x0000000000004650      0xeaa ./example/src/freertos_blinky.o
- .debug_info    0x00000000000054fa      0x974 ./example/src/sysinit.o
- .debug_info    0x0000000000005e6e     0x16e2 ./example/CAN/can.o
- .debug_info    0x0000000000007550     0x10f4 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board.o)
- .debug_info    0x0000000000008644     0x1357 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board_sysinit.o)
- .debug_info    0x000000000000999b       0xe0 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(chip_11xx.o)
- .debug_info    0x0000000000009a7b      0x914 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(clock_11xx.o)
- .debug_info    0x000000000000a38f      0xc11 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(gpio_11xx_2.o)
- .debug_info    0x000000000000afa0      0x5eb /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(sysctl_11xx.o)
+ .debug_info    0x0000000000004650      0xebc ./example/src/freertos_blinky.o
+ .debug_info    0x000000000000550c      0x974 ./example/src/sysinit.o
+ .debug_info    0x0000000000005e80     0x123d ./example/UART/uart_drv.o
+ .debug_info    0x00000000000070bd     0x16e2 ./example/CAN/can.o
+ .debug_info    0x000000000000879f     0x10f4 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board.o)
+ .debug_info    0x0000000000009893     0x1357 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board_sysinit.o)
+ .debug_info    0x000000000000abea       0xe0 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(chip_11xx.o)
+ .debug_info    0x000000000000acca      0x914 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(clock_11xx.o)
+ .debug_info    0x000000000000b5de      0xc11 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(gpio_11xx_2.o)
+ .debug_info    0x000000000000c1ef      0xc28 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(ring_buffer.o)
+ .debug_info    0x000000000000ce17      0x5eb /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(sysctl_11xx.o)
+ .debug_info    0x000000000000d402      0xf75 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
 
-.debug_abbrev   0x0000000000000000     0x1ee9
+.debug_abbrev   0x0000000000000000     0x268c
  .debug_abbrev  0x0000000000000000      0x23b ./freertos/src/FreeRTOSCommonHooks.o
  .debug_abbrev  0x000000000000023b      0x240 ./freertos/src/heap_1.o
  .debug_abbrev  0x000000000000047b      0x1f7 ./freertos/src/list.o
@@ -3491,15 +3473,18 @@ OUTPUT(nxp_lpcxpresso_11c24_freertos_blinky.axf elf32-littlearm)
  .debug_abbrev  0x0000000000000bee      0x117 ./example/src/cr_startup_lpc11xx.o
  .debug_abbrev  0x0000000000000d05      0x1ea ./example/src/freertos_blinky.o
  .debug_abbrev  0x0000000000000eef      0x194 ./example/src/sysinit.o
- .debug_abbrev  0x0000000000001083      0x2e7 ./example/CAN/can.o
- .debug_abbrev  0x000000000000136a      0x300 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board.o)
- .debug_abbrev  0x000000000000166a      0x2e7 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board_sysinit.o)
- .debug_abbrev  0x0000000000001951       0x92 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(chip_11xx.o)
- .debug_abbrev  0x00000000000019e3      0x1fd /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(clock_11xx.o)
- .debug_abbrev  0x0000000000001be0      0x1fe /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(gpio_11xx_2.o)
- .debug_abbrev  0x0000000000001dde      0x10b /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(sysctl_11xx.o)
+ .debug_abbrev  0x0000000000001083      0x307 ./example/UART/uart_drv.o
+ .debug_abbrev  0x000000000000138a      0x2e7 ./example/CAN/can.o
+ .debug_abbrev  0x0000000000001671      0x300 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board.o)
+ .debug_abbrev  0x0000000000001971      0x2e7 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board_sysinit.o)
+ .debug_abbrev  0x0000000000001c58       0x92 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(chip_11xx.o)
+ .debug_abbrev  0x0000000000001cea      0x1fd /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(clock_11xx.o)
+ .debug_abbrev  0x0000000000001ee7      0x1fe /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(gpio_11xx_2.o)
+ .debug_abbrev  0x00000000000020e5      0x23e /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(ring_buffer.o)
+ .debug_abbrev  0x0000000000002323      0x10b /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(sysctl_11xx.o)
+ .debug_abbrev  0x000000000000242e      0x25e /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
 
-.debug_aranges  0x0000000000000000      0x618
+.debug_aranges  0x0000000000000000      0x7f0
  .debug_aranges
                 0x0000000000000000       0x40 ./freertos/src/FreeRTOSCommonHooks.o
  .debug_aranges
@@ -3513,42 +3498,51 @@ OUTPUT(nxp_lpcxpresso_11c24_freertos_blinky.axf elf32-littlearm)
  .debug_aranges
                 0x0000000000000278       0x60 ./example/src/cr_startup_lpc11xx.o
  .debug_aranges
-                0x00000000000002d8       0x38 ./example/src/freertos_blinky.o
+                0x00000000000002d8       0x40 ./example/src/freertos_blinky.o
  .debug_aranges
-                0x0000000000000310       0x20 ./example/src/sysinit.o
+                0x0000000000000318       0x20 ./example/src/sysinit.o
  .debug_aranges
-                0x0000000000000330       0x58 ./example/CAN/can.o
+                0x0000000000000338       0x80 ./example/UART/uart_drv.o
  .debug_aranges
-                0x0000000000000388       0xa0 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board.o)
+                0x00000000000003b8       0x58 ./example/CAN/can.o
  .debug_aranges
-                0x0000000000000428       0x60 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board_sysinit.o)
+                0x0000000000000410       0xa0 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board.o)
  .debug_aranges
-                0x0000000000000488       0x20 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(chip_11xx.o)
+                0x00000000000004b0       0x60 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board_sysinit.o)
  .debug_aranges
-                0x00000000000004a8       0x88 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(clock_11xx.o)
+                0x0000000000000510       0x20 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(chip_11xx.o)
  .debug_aranges
-                0x0000000000000530       0xb0 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(gpio_11xx_2.o)
+                0x0000000000000530       0x88 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(clock_11xx.o)
  .debug_aranges
-                0x00000000000005e0       0x38 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(sysctl_11xx.o)
+                0x00000000000005b8       0xb0 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(gpio_11xx_2.o)
+ .debug_aranges
+                0x0000000000000668       0x60 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(ring_buffer.o)
+ .debug_aranges
+                0x00000000000006c8       0x38 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(sysctl_11xx.o)
+ .debug_aranges
+                0x0000000000000700       0xf0 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
 
-.debug_ranges   0x0000000000000000      0x528
+.debug_ranges   0x0000000000000000      0x6d0
  .debug_ranges  0x0000000000000000       0x30 ./freertos/src/FreeRTOSCommonHooks.o
  .debug_ranges  0x0000000000000030       0x28 ./freertos/src/heap_1.o
  .debug_ranges  0x0000000000000058       0x30 ./freertos/src/list.o
  .debug_ranges  0x0000000000000088       0x60 ./freertos/src/port.o
  .debug_ranges  0x00000000000000e8      0x140 ./freertos/src/tasks.o
  .debug_ranges  0x0000000000000228       0x50 ./example/src/cr_startup_lpc11xx.o
- .debug_ranges  0x0000000000000278       0x28 ./example/src/freertos_blinky.o
- .debug_ranges  0x00000000000002a0       0x10 ./example/src/sysinit.o
- .debug_ranges  0x00000000000002b0       0x48 ./example/CAN/can.o
- .debug_ranges  0x00000000000002f8       0x90 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board.o)
- .debug_ranges  0x0000000000000388       0x50 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board_sysinit.o)
- .debug_ranges  0x00000000000003d8       0x10 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(chip_11xx.o)
- .debug_ranges  0x00000000000003e8       0x78 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(clock_11xx.o)
- .debug_ranges  0x0000000000000460       0xa0 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(gpio_11xx_2.o)
- .debug_ranges  0x0000000000000500       0x28 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(sysctl_11xx.o)
+ .debug_ranges  0x0000000000000278       0x30 ./example/src/freertos_blinky.o
+ .debug_ranges  0x00000000000002a8       0x10 ./example/src/sysinit.o
+ .debug_ranges  0x00000000000002b8       0x70 ./example/UART/uart_drv.o
+ .debug_ranges  0x0000000000000328       0x48 ./example/CAN/can.o
+ .debug_ranges  0x0000000000000370       0x90 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board.o)
+ .debug_ranges  0x0000000000000400       0x50 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board_sysinit.o)
+ .debug_ranges  0x0000000000000450       0x10 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(chip_11xx.o)
+ .debug_ranges  0x0000000000000460       0x78 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(clock_11xx.o)
+ .debug_ranges  0x00000000000004d8       0xa0 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(gpio_11xx_2.o)
+ .debug_ranges  0x0000000000000578       0x50 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(ring_buffer.o)
+ .debug_ranges  0x00000000000005c8       0x28 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(sysctl_11xx.o)
+ .debug_ranges  0x00000000000005f0       0xe0 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
 
-.debug_macro    0x0000000000000000     0x725e
+.debug_macro    0x0000000000000000     0x7838
  .debug_macro   0x0000000000000000      0x362 ./freertos/src/FreeRTOSCommonHooks.o
  .debug_macro   0x0000000000000362      0xa96 ./freertos/src/FreeRTOSCommonHooks.o
  .debug_macro   0x0000000000000df8      0x174 ./freertos/src/FreeRTOSCommonHooks.o
@@ -3631,39 +3625,47 @@ OUTPUT(nxp_lpcxpresso_11c24_freertos_blinky.axf elf32-littlearm)
  .debug_macro   0x00000000000045d8       0x17 ./freertos/src/tasks.o
  .debug_macro   0x00000000000045ef       0x26 ./example/src/cr_startup_lpc11xx.o
  .debug_macro   0x0000000000004615      0xa9c ./example/src/cr_startup_lpc11xx.o
- .debug_macro   0x00000000000050b1      0x381 ./example/src/freertos_blinky.o
- .debug_macro   0x0000000000005432       0x7b ./example/src/freertos_blinky.o
- .debug_macro   0x00000000000054ad       0x22 ./example/src/freertos_blinky.o
- .debug_macro   0x00000000000054cf      0x11b ./example/src/freertos_blinky.o
- .debug_macro   0x00000000000055ea      0x2ec ./example/src/sysinit.o
- .debug_macro   0x00000000000058d6      0x2f6 ./example/CAN/can.o
- .debug_macro   0x0000000000005bcc      0x2f9 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board.o)
- .debug_macro   0x0000000000005ec5      0xa8a /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board.o)
- .debug_macro   0x000000000000694f       0x12 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board.o)
- .debug_macro   0x0000000000006961      0x317 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board_sysinit.o)
- .debug_macro   0x0000000000006c78      0x16f /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(chip_11xx.o)
- .debug_macro   0x0000000000006de7      0x16f /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(clock_11xx.o)
- .debug_macro   0x0000000000006f56      0x16f /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(gpio_11xx_2.o)
- .debug_macro   0x00000000000070c5      0x199 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(sysctl_11xx.o)
+ .debug_macro   0x00000000000050b1      0x385 ./example/src/freertos_blinky.o
+ .debug_macro   0x0000000000005436       0x7b ./example/src/freertos_blinky.o
+ .debug_macro   0x00000000000054b1       0x22 ./example/src/freertos_blinky.o
+ .debug_macro   0x00000000000054d3      0x11b ./example/src/freertos_blinky.o
+ .debug_macro   0x00000000000055ee      0x2ec ./example/src/sysinit.o
+ .debug_macro   0x00000000000058da      0x2f6 ./example/UART/uart_drv.o
+ .debug_macro   0x0000000000005bd0      0x2f6 ./example/CAN/can.o
+ .debug_macro   0x0000000000005ec6      0x2f9 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board.o)
+ .debug_macro   0x00000000000061bf      0xa8a /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board.o)
+ .debug_macro   0x0000000000006c49       0x12 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board.o)
+ .debug_macro   0x0000000000006c5b      0x317 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board_sysinit.o)
+ .debug_macro   0x0000000000006f72      0x16f /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(chip_11xx.o)
+ .debug_macro   0x00000000000070e1      0x16f /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(clock_11xx.o)
+ .debug_macro   0x0000000000007250      0x16f /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(gpio_11xx_2.o)
+ .debug_macro   0x00000000000073bf      0x151 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(ring_buffer.o)
+ .debug_macro   0x0000000000007510       0x10 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(ring_buffer.o)
+ .debug_macro   0x0000000000007520       0x10 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(ring_buffer.o)
+ .debug_macro   0x0000000000007530      0x199 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(sysctl_11xx.o)
+ .debug_macro   0x00000000000076c9      0x16f /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
 
-.debug_line     0x0000000000000000     0x7a02
+.debug_line     0x0000000000000000     0x92c1
  .debug_line    0x0000000000000000      0x891 ./freertos/src/FreeRTOSCommonHooks.o
  .debug_line    0x0000000000000891      0x8bb ./freertos/src/heap_1.o
  .debug_line    0x000000000000114c      0x917 ./freertos/src/list.o
  .debug_line    0x0000000000001a63      0x947 ./freertos/src/port.o
  .debug_line    0x00000000000023aa     0x13e3 ./freertos/src/tasks.o
  .debug_line    0x000000000000378d      0x215 ./example/src/cr_startup_lpc11xx.o
- .debug_line    0x00000000000039a2      0x932 ./example/src/freertos_blinky.o
- .debug_line    0x00000000000042d4      0x6b9 ./example/src/sysinit.o
- .debug_line    0x000000000000498d      0x830 ./example/CAN/can.o
- .debug_line    0x00000000000051bd      0x8a7 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board.o)
- .debug_line    0x0000000000005a64      0x852 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board_sysinit.o)
- .debug_line    0x00000000000062b6      0x492 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(chip_11xx.o)
- .debug_line    0x0000000000006748      0x6ac /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(clock_11xx.o)
- .debug_line    0x0000000000006df4      0x6fb /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(gpio_11xx_2.o)
- .debug_line    0x00000000000074ef      0x513 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(sysctl_11xx.o)
+ .debug_line    0x00000000000039a2      0x9c2 ./example/src/freertos_blinky.o
+ .debug_line    0x0000000000004364      0x6b9 ./example/src/sysinit.o
+ .debug_line    0x0000000000004a1d      0x8e6 ./example/UART/uart_drv.o
+ .debug_line    0x0000000000005303      0x830 ./example/CAN/can.o
+ .debug_line    0x0000000000005b33      0x8a7 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board.o)
+ .debug_line    0x00000000000063da      0x852 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board_sysinit.o)
+ .debug_line    0x0000000000006c2c      0x492 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(chip_11xx.o)
+ .debug_line    0x00000000000070be      0x6ac /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(clock_11xx.o)
+ .debug_line    0x000000000000776a      0x6fb /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(gpio_11xx_2.o)
+ .debug_line    0x0000000000007e65      0x69b /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(ring_buffer.o)
+ .debug_line    0x0000000000008500      0x513 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(sysctl_11xx.o)
+ .debug_line    0x0000000000008a13      0x8ae /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
 
-.debug_str      0x0000000000000000    0x11c96
+.debug_str      0x0000000000000000    0x1213e
  .debug_str     0x0000000000000000     0xe22c ./freertos/src/FreeRTOSCommonHooks.o
                                        0xe506 (size before relaxing)
  .debug_str     0x000000000000e22c      0x211 ./freertos/src/heap_1.o
@@ -3676,24 +3678,30 @@ OUTPUT(nxp_lpcxpresso_11c24_freertos_blinky.axf elf32-littlearm)
                                        0xfdcd (size before relaxing)
  .debug_str     0x000000000000fffa      0x27a ./example/src/cr_startup_lpc11xx.o
                                        0x2f54 (size before relaxing)
- .debug_str     0x0000000000010274      0x2fc ./example/src/freertos_blinky.o
-                                       0xe78b (size before relaxing)
- .debug_str     0x0000000000010570       0x19 ./example/src/sysinit.o
+ .debug_str     0x0000000000010274      0x311 ./example/src/freertos_blinky.o
+                                       0xe7a0 (size before relaxing)
+ .debug_str     0x0000000000010585       0x19 ./example/src/sysinit.o
                                        0xc56b (size before relaxing)
- .debug_str     0x0000000000010589      0x72f ./example/CAN/can.o
+ .debug_str     0x000000000001059e      0x67a ./example/UART/uart_drv.o
+                                       0xcc01 (size before relaxing)
+ .debug_str     0x0000000000010c18      0x4eb ./example/CAN/can.o
                                        0xcf61 (size before relaxing)
- .debug_str     0x0000000000010cb8      0x4bc /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board.o)
+ .debug_str     0x0000000000011103      0x1a4 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board.o)
                                        0xc9b5 (size before relaxing)
- .debug_str     0x0000000000011174      0x283 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board_sysinit.o)
+ .debug_str     0x00000000000112a7      0x283 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board_sysinit.o)
                                        0xcea5 (size before relaxing)
- .debug_str     0x00000000000113f7       0x77 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(chip_11xx.o)
+ .debug_str     0x000000000001152a       0x77 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(chip_11xx.o)
                                        0x7ec7 (size before relaxing)
- .debug_str     0x000000000001146e      0x447 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(clock_11xx.o)
+ .debug_str     0x00000000000115a1      0x447 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(clock_11xx.o)
                                        0x869b (size before relaxing)
- .debug_str     0x00000000000118b5      0x242 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(gpio_11xx_2.o)
+ .debug_str     0x00000000000119e8      0x242 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(gpio_11xx_2.o)
                                        0x8583 (size before relaxing)
- .debug_str     0x0000000000011af7      0x19f /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(sysctl_11xx.o)
+ .debug_str     0x0000000000011c2a      0x138 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(ring_buffer.o)
+                                       0x744c (size before relaxing)
+ .debug_str     0x0000000000011d62      0x19f /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(sysctl_11xx.o)
                                        0x82e5 (size before relaxing)
+ .debug_str     0x0000000000011f01      0x23d /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
+                                       0x8659 (size before relaxing)
 
 .comment        0x0000000000000000       0x79
  .comment       0x0000000000000000       0x79 ./freertos/src/FreeRTOSCommonHooks.o
@@ -3705,13 +3713,16 @@ OUTPUT(nxp_lpcxpresso_11c24_freertos_blinky.axf elf32-littlearm)
  .comment       0x0000000000000079       0x7a ./example/src/cr_startup_lpc11xx.o
  .comment       0x0000000000000079       0x7a ./example/src/freertos_blinky.o
  .comment       0x0000000000000079       0x7a ./example/src/sysinit.o
+ .comment       0x0000000000000079       0x7a ./example/UART/uart_drv.o
  .comment       0x0000000000000079       0x7a ./example/CAN/can.o
  .comment       0x0000000000000079       0x7a /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board.o)
  .comment       0x0000000000000079       0x7a /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board_sysinit.o)
  .comment       0x0000000000000079       0x7a /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(chip_11xx.o)
  .comment       0x0000000000000079       0x7a /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(clock_11xx.o)
  .comment       0x0000000000000079       0x7a /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(gpio_11xx_2.o)
+ .comment       0x0000000000000079       0x7a /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(ring_buffer.o)
  .comment       0x0000000000000079       0x7a /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(sysctl_11xx.o)
+ .comment       0x0000000000000079       0x7a /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
  .comment       0x0000000000000079       0x7a /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(_cr_sbrk.o)
  .comment       0x0000000000000079       0x7a /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(syscalls.o)
  .comment       0x0000000000000079       0x7a /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(_cr_check_heap.o)
@@ -3735,135 +3746,144 @@ OUTPUT(nxp_lpcxpresso_11c24_freertos_blinky.axf elf32-littlearm)
  .ARM.attributes
                 0x0000000000000134       0x2c ./example/src/sysinit.o
  .ARM.attributes
-                0x0000000000000160       0x2c ./example/CAN/can.o
+                0x0000000000000160       0x2c ./example/UART/uart_drv.o
  .ARM.attributes
-                0x000000000000018c       0x2c /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board.o)
+                0x000000000000018c       0x2c ./example/CAN/can.o
  .ARM.attributes
-                0x00000000000001b8       0x2c /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board_sysinit.o)
+                0x00000000000001b8       0x2c /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board.o)
  .ARM.attributes
-                0x00000000000001e4       0x2c /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(chip_11xx.o)
+                0x00000000000001e4       0x2c /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board_sysinit.o)
  .ARM.attributes
-                0x0000000000000210       0x2c /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(clock_11xx.o)
+                0x0000000000000210       0x2c /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(chip_11xx.o)
  .ARM.attributes
-                0x000000000000023c       0x2c /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(gpio_11xx_2.o)
+                0x000000000000023c       0x2c /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(clock_11xx.o)
  .ARM.attributes
-                0x0000000000000268       0x2c /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(sysctl_11xx.o)
+                0x0000000000000268       0x2c /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(gpio_11xx_2.o)
  .ARM.attributes
-                0x0000000000000294       0x1e /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+                0x0000000000000294       0x2c /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(ring_buffer.o)
  .ARM.attributes
-                0x00000000000002b2       0x1e /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+                0x00000000000002c0       0x2c /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(sysctl_11xx.o)
  .ARM.attributes
-                0x00000000000002d0       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memcmp.o)
+                0x00000000000002ec       0x2c /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
  .ARM.attributes
-                0x00000000000002fc       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memset.o)
+                0x0000000000000318       0x1e /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
  .ARM.attributes
-                0x0000000000000328       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-printf.o)
+                0x0000000000000336       0x1e /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .ARM.attributes
-                0x0000000000000354       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-puts.o)
+                0x0000000000000354       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memcmp.o)
  .ARM.attributes
-                0x0000000000000380       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-strncpy.o)
+                0x0000000000000380       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memset.o)
  .ARM.attributes
-                0x00000000000003ac       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-wbuf.o)
+                0x00000000000003ac       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-printf.o)
  .ARM.attributes
-                0x00000000000003d8       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-wsetup.o)
+                0x00000000000003d8       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-puts.o)
  .ARM.attributes
-                0x0000000000000404       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-fflush.o)
+                0x0000000000000404       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-strncpy.o)
  .ARM.attributes
-                0x0000000000000430       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-findfp.o)
+                0x0000000000000430       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-wbuf.o)
  .ARM.attributes
-                0x000000000000045c       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-fwalk.o)
+                0x000000000000045c       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-wsetup.o)
  .ARM.attributes
-                0x0000000000000488       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-impure.o)
+                0x0000000000000488       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-fflush.o)
  .ARM.attributes
-                0x00000000000004b4       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-lock.o)
+                0x00000000000004b4       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-findfp.o)
  .ARM.attributes
-                0x00000000000004e0       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-makebuf.o)
+                0x00000000000004e0       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-fwalk.o)
  .ARM.attributes
-                0x000000000000050c       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-nano-freer.o)
+                0x000000000000050c       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-impure.o)
  .ARM.attributes
-                0x0000000000000538       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-nano-mallocr.o)
+                0x0000000000000538       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-lock.o)
  .ARM.attributes
-                0x0000000000000564       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-nano-vfprintf.o)
+                0x0000000000000564       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-makebuf.o)
  .ARM.attributes
-                0x0000000000000590       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-nano-vfprintf_i.o)
+                0x0000000000000590       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-nano-freer.o)
  .ARM.attributes
-                0x00000000000005bc       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-sbrkr.o)
+                0x00000000000005bc       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-nano-mallocr.o)
  .ARM.attributes
-                0x00000000000005e8       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-stdio.o)
+                0x00000000000005e8       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-nano-vfprintf.o)
  .ARM.attributes
-                0x0000000000000614       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-writer.o)
+                0x0000000000000614       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-nano-vfprintf_i.o)
  .ARM.attributes
-                0x0000000000000640       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-closer.o)
+                0x0000000000000640       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-sbrkr.o)
  .ARM.attributes
-                0x000000000000066c       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-fstatr.o)
+                0x000000000000066c       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-stdio.o)
  .ARM.attributes
-                0x0000000000000698       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-isattyr.o)
+                0x0000000000000698       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-writer.o)
  .ARM.attributes
-                0x00000000000006c4       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-lseekr.o)
+                0x00000000000006c4       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-closer.o)
  .ARM.attributes
-                0x00000000000006f0       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memchr-stub.o)
+                0x00000000000006f0       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-fstatr.o)
  .ARM.attributes
-                0x000000000000071c       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-mlock.o)
+                0x000000000000071c       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-isattyr.o)
  .ARM.attributes
-                0x0000000000000748       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-readr.o)
+                0x0000000000000748       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-lseekr.o)
  .ARM.attributes
-                0x0000000000000774       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-reent.o)
+                0x0000000000000774       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memchr-stub.o)
  .ARM.attributes
-                0x00000000000007a0       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(_cr_sbrk.o)
+                0x00000000000007a0       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-mlock.o)
  .ARM.attributes
-                0x00000000000007cc       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(syscalls.o)
+                0x00000000000007cc       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-readr.o)
  .ARM.attributes
-                0x00000000000007f8       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(_cr_check_heap.o)
+                0x00000000000007f8       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-reent.o)
  .ARM.attributes
-                0x0000000000000824       0x1e /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_thumb1_case_shi.o)
+                0x0000000000000824       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(_cr_sbrk.o)
  .ARM.attributes
-                0x0000000000000842       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-errno.o)
+                0x0000000000000850       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(syscalls.o)
+ .ARM.attributes
+                0x000000000000087c       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_semihost.a(_cr_check_heap.o)
+ .ARM.attributes
+                0x00000000000008a8       0x1e /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_thumb1_case_shi.o)
+ .ARM.attributes
+                0x00000000000008c6       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-errno.o)
 
-.debug_frame    0x0000000000000000     0x1b4c
+.debug_frame    0x0000000000000000     0x21a8
  .debug_frame   0x0000000000000000       0xa4 ./freertos/src/FreeRTOSCommonHooks.o
  .debug_frame   0x00000000000000a4       0x88 ./freertos/src/heap_1.o
  .debug_frame   0x000000000000012c       0xb0 ./freertos/src/list.o
  .debug_frame   0x00000000000001dc      0x128 ./freertos/src/port.o
  .debug_frame   0x0000000000000304      0x4e4 ./freertos/src/tasks.o
  .debug_frame   0x00000000000007e8       0xbc ./example/src/cr_startup_lpc11xx.o
- .debug_frame   0x00000000000008a4       0x8c ./example/src/freertos_blinky.o
- .debug_frame   0x0000000000000930       0x2c ./example/src/sysinit.o
- .debug_frame   0x000000000000095c      0x10c ./example/CAN/can.o
- .debug_frame   0x0000000000000a68      0x224 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board.o)
- .debug_frame   0x0000000000000c8c      0x128 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board_sysinit.o)
- .debug_frame   0x0000000000000db4       0x2c /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(chip_11xx.o)
- .debug_frame   0x0000000000000de0      0x1c0 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(clock_11xx.o)
- .debug_frame   0x0000000000000fa0      0x270 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(gpio_11xx_2.o)
- .debug_frame   0x0000000000001210       0x90 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(sysctl_11xx.o)
- .debug_frame   0x00000000000012a0       0x20 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
- .debug_frame   0x00000000000012c0       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memcmp.o)
- .debug_frame   0x00000000000012ec       0x20 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memset.o)
- .debug_frame   0x000000000000130c       0x50 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-printf.o)
- .debug_frame   0x000000000000135c       0x44 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-puts.o)
- .debug_frame   0x00000000000013a0       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-strncpy.o)
- .debug_frame   0x00000000000013cc       0x48 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-wbuf.o)
- .debug_frame   0x0000000000001414       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-wsetup.o)
- .debug_frame   0x0000000000001440       0x68 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-fflush.o)
- .debug_frame   0x00000000000014a8      0x170 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-findfp.o)
- .debug_frame   0x0000000000001618       0x58 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-fwalk.o)
- .debug_frame   0x0000000000001670       0xb0 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-lock.o)
- .debug_frame   0x0000000000001720       0x54 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-makebuf.o)
- .debug_frame   0x0000000000001774       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-nano-freer.o)
- .debug_frame   0x00000000000017a0       0x30 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-nano-mallocr.o)
- .debug_frame   0x00000000000017d0       0x9c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-nano-vfprintf.o)
- .debug_frame   0x000000000000186c       0x54 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-nano-vfprintf_i.o)
- .debug_frame   0x00000000000018c0       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-sbrkr.o)
- .debug_frame   0x00000000000018ec       0x90 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-stdio.o)
- .debug_frame   0x000000000000197c       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-writer.o)
- .debug_frame   0x00000000000019a8       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-closer.o)
- .debug_frame   0x00000000000019d4       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-fstatr.o)
- .debug_frame   0x0000000000001a00       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-isattyr.o)
- .debug_frame   0x0000000000001a2c       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-lseekr.o)
- .debug_frame   0x0000000000001a58       0x20 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memchr-stub.o)
- .debug_frame   0x0000000000001a78       0x40 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-mlock.o)
- .debug_frame   0x0000000000001ab8       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-readr.o)
- .debug_frame   0x0000000000001ae4       0x48 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-reent.o)
- .debug_frame   0x0000000000001b2c       0x20 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-errno.o)
+ .debug_frame   0x00000000000008a4       0xa8 ./example/src/freertos_blinky.o
+ .debug_frame   0x000000000000094c       0x2c ./example/src/sysinit.o
+ .debug_frame   0x0000000000000978      0x1a0 ./example/UART/uart_drv.o
+ .debug_frame   0x0000000000000b18      0x10c ./example/CAN/can.o
+ .debug_frame   0x0000000000000c24      0x224 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board.o)
+ .debug_frame   0x0000000000000e48      0x128 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/nxp_lpcxpresso_11c24_board_lib/Debug/libnxp_lpcxpresso_11c24_board_lib.a(board_sysinit.o)
+ .debug_frame   0x0000000000000f70       0x2c /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(chip_11xx.o)
+ .debug_frame   0x0000000000000f9c      0x1c0 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(clock_11xx.o)
+ .debug_frame   0x000000000000115c      0x270 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(gpio_11xx_2.o)
+ .debug_frame   0x00000000000013cc      0x130 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(ring_buffer.o)
+ .debug_frame   0x00000000000014fc       0x90 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(sysctl_11xx.o)
+ .debug_frame   0x000000000000158c      0x370 /home/ryu/Workspace/facultate/CAN/PROJECT/developing/lpc_chip_11cxx_lib/Debug/liblpc_chip_11cxx_lib.a(uart_11xx.o)
+ .debug_frame   0x00000000000018fc       0x20 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+ .debug_frame   0x000000000000191c       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memcmp.o)
+ .debug_frame   0x0000000000001948       0x20 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memset.o)
+ .debug_frame   0x0000000000001968       0x50 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-printf.o)
+ .debug_frame   0x00000000000019b8       0x44 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-puts.o)
+ .debug_frame   0x00000000000019fc       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-strncpy.o)
+ .debug_frame   0x0000000000001a28       0x48 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-wbuf.o)
+ .debug_frame   0x0000000000001a70       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-wsetup.o)
+ .debug_frame   0x0000000000001a9c       0x68 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-fflush.o)
+ .debug_frame   0x0000000000001b04      0x170 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-findfp.o)
+ .debug_frame   0x0000000000001c74       0x58 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-fwalk.o)
+ .debug_frame   0x0000000000001ccc       0xb0 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-lock.o)
+ .debug_frame   0x0000000000001d7c       0x54 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-makebuf.o)
+ .debug_frame   0x0000000000001dd0       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-nano-freer.o)
+ .debug_frame   0x0000000000001dfc       0x30 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-nano-mallocr.o)
+ .debug_frame   0x0000000000001e2c       0x9c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-nano-vfprintf.o)
+ .debug_frame   0x0000000000001ec8       0x54 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-nano-vfprintf_i.o)
+ .debug_frame   0x0000000000001f1c       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-sbrkr.o)
+ .debug_frame   0x0000000000001f48       0x90 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-stdio.o)
+ .debug_frame   0x0000000000001fd8       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-writer.o)
+ .debug_frame   0x0000000000002004       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-closer.o)
+ .debug_frame   0x0000000000002030       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-fstatr.o)
+ .debug_frame   0x000000000000205c       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-isattyr.o)
+ .debug_frame   0x0000000000002088       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-lseekr.o)
+ .debug_frame   0x00000000000020b4       0x20 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memchr-stub.o)
+ .debug_frame   0x00000000000020d4       0x40 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-mlock.o)
+ .debug_frame   0x0000000000002114       0x2c /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-readr.o)
+ .debug_frame   0x0000000000002140       0x48 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-reent.o)
+ .debug_frame   0x0000000000002188       0x20 /usr/local/mcuxpressoide-11.2.1_4149/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.2.0.202001021529/tools/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-errno.o)
 
 .debug_loc      0x0000000000000000      0x234
  .debug_loc     0x0000000000000000      0x234 ./example/src/cr_startup_lpc11xx.o
