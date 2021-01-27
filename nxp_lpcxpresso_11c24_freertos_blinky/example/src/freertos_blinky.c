@@ -62,22 +62,24 @@ static void prvSetupHardware(void)
 	uart_init();
 }
 
-
-// Deinit components if needed
-static void releaseHardwareSetup(void)
-{
-	uart_deinit();
-}
-
 static void blinkLed(void *pvParameters)
 {
 	bool ledState = false;
+	int my_count = 0u;
+	char my_message[15];
 	for(;;)
 	{
+		my_count ++;
+		if (my_count > 9)
+		{
+			my_count = 0;
+		}
+		sprintf(my_message, "Hello %d\r\n", my_count);
 		Board_LED_Set(0, ledState);
 		ledState = (bool)!ledState;
-		puts("blindLed task loop");
-//		uart_send_msg("loop\r\n");
+		puts(my_message);
+//		uart_transmit();
+		uart_send_msg(my_message);
 
 		vTaskDelay(configTICK_RATE_HZ * 2);
 	}
@@ -99,7 +101,7 @@ static void transmitPeriodic(void *pvParameters)
 
 	for(;;)
 	{
-		LPC_CCAN_API->can_transmit(&msg_obj);
+//		LPC_CCAN_API->can_transmit(&msg_obj);
 		vTaskDelay(configTICK_RATE_HZ * 2);
 	}
 }
@@ -114,12 +116,12 @@ int main(void)
 	prvSetupHardware();
 
 	xTaskCreate(blinkLed, (signed char *) "blinkLed",
-				configMINIMAL_STACK_SIZE + 40, NULL, (tskIDLE_PRIORITY + 1UL),
+				configMINIMAL_STACK_SIZE + 100, NULL, (tskIDLE_PRIORITY + 1UL),
 				(xTaskHandle *) NULL);
 
-//	xTaskCreate(transmitPeriodic, (signed char *) "periodicCanTransmit",
-//				configMINIMAL_STACK_SIZE, NULL, (tskIDLE_PRIORITY + 1UL),
-//				(xTaskHandle *) NULL);
+	xTaskCreate(transmitPeriodic, (signed char *) "periodicCanTransmit",
+				configMINIMAL_STACK_SIZE, NULL, (tskIDLE_PRIORITY + 1UL),
+				(xTaskHandle *) NULL);
 
 	/* Send initial messages */
 	puts("Start scheduler");

@@ -1,5 +1,5 @@
 #include <uart_drv.h>
-
+#include <string.h>
 
 
 static const char inst1[] = "LPC11xx UART is initialized!\r\n";
@@ -15,7 +15,7 @@ STATIC RINGBUFF_T txring, rxring;
 static uint8_t rxbuff[UART_RB_SIZE], txbuff[UART_RB_SIZE];
 
 
-void UART_IRQHandler2(void)
+void UART_IRQHandler(void)
 {
  /* Want to handle any errors? Do it here. */
 
@@ -57,20 +57,16 @@ void uart_init()
   NVIC_SetPriority(UART0_IRQn, 1);
   NVIC_EnableIRQ(UART0_IRQn);
 
-  Chip_UART_SendBlocking(LPC_USART, inst1, sizeof(inst1) - 1);
+//  Chip_UART_SendBlocking(LPC_USART, inst1, sizeof(inst1) - 1);
 //  Chip_UART_SendRB(LPC_USART, &txring, inst1, sizeof(inst1) - 1);
 }
 
-
-void uart_deinit()
+void uart_transmit(void)
 {
-	/* DeInitialize UART0 peripheral */
-	NVIC_DisableIRQ(UART0_IRQn);
-	Chip_UART_DeInit(LPC_USART);
+	Chip_UART_SendRB(LPC_USART, &txring, inst1, sizeof(inst1) - 1);
 }
 
-
-void uart_send_msg(char message[])
+void uart_send_msg(char my_message[])
 {
-	Chip_UART_SendBlocking(LPC_USART, message, sizeof(message) / sizeof(message[0]) - 1);
+	Chip_UART_SendRB(LPC_USART, &txring, my_message, strlen(my_message));
 }

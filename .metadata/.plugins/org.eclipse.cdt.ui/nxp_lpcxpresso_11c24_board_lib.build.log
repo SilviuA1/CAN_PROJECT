@@ -1,4 +1,4 @@
-21:52:11 **** Build of configuration Debug for project nxp_lpcxpresso_11c24_board_lib ****
+22:58:05 **** Build of configuration Debug for project nxp_lpcxpresso_11c24_board_lib ****
 make -r all 
 Building file: ../src/board.c
 Invoking: MCU C Compiler
@@ -36,5 +36,5 @@ arm-none-eabi-size "libnxp_lpcxpresso_11c24_board_lib.a" ; # arm-none-eabi-objdu
     482	      0	      0	    482	    1e2	board_sysinit.o (ex libnxp_lpcxpresso_11c24_board_lib.a)
  
 
-21:52:12 Build Finished. 0 errors, 2 warnings. (took 565ms)
+22:58:06 Build Finished. 0 errors, 2 warnings. (took 465ms)
 

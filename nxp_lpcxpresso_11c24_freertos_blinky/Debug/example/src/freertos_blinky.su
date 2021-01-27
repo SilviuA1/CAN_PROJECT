@@ -1,5 +1,4 @@
 freertos_blinky.c:55:13:prvSetupHardware	8	static
-freertos_blinky.c:67:13:releaseHardwareSetup	8	static
-freertos_blinky.c:72:13:blinkLed	32	static
-freertos_blinky.c:86:13:transmitPeriodic	40	static
-freertos_blinky.c:112:5:main	24	static
+freertos_blinky.c:65:13:blinkLed	48	static
+freertos_blinky.c:88:13:transmitPeriodic	40	static
+freertos_blinky.c:114:5:main	24	static
