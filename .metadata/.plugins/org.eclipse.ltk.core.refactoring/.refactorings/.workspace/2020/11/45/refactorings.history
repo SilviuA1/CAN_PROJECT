@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Delete 10 resources" deleteContents="false" description="Delete 10 resources" element1="/nxp_lpcxpresso_11c24_periph_adc" element10="/nxp_lpcxpresso_11c24_periph_watchdog" element2="/nxp_lpcxpresso_11c24_periph_blinky" element3="/nxp_lpcxpresso_11c24_periph_bod" element4="/nxp_lpcxpresso_11c24_periph_ccan_rom" element5="/nxp_lpcxpresso_11c24_periph_clkout" element6="/nxp_lpcxpresso_11c24_periph_i2c" element7="/nxp_lpcxpresso_11c24_periph_pinint" element8="/nxp_lpcxpresso_11c24_periph_ssp" element9="/nxp_lpcxpresso_11c24_periph_uart" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="10" stamp="1604598469409"/>
-</session>
