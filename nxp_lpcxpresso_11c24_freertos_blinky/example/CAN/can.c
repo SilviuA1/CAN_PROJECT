@@ -1,6 +1,7 @@
 #include "can.h"
 
 CCAN_MSG_OBJ_T msg_obj;
+CCAN_MSG_OBJ_T gCANRxObj;
 
 void baudrateCalculate(uint32_t baud_rate, uint32_t *can_api_timing_cfg)
 {
@@ -46,6 +47,10 @@ void CAN_rx(uint8_t msg_obj_num) {
   msg_obj.mode_id += 0x100;
   LPC_CCAN_API->can_transmit(&msg_obj);
  }
+
+ // where is this suppose to be called
+
+ LPC_CCAN_API->config_rxmsgobj(&gCANRxObj);
 }
 
 /* CAN transmit callback */
@@ -86,4 +91,11 @@ void CAN_init(void)
   LPC_CCAN_API->config_calb(&callbacks);
   /* Enable the CAN Interrupt */
   NVIC_EnableIRQ(CAN_IRQn);
+
+  /* Configure message object 1 to receive all 29-bit messages for servo outputs */
+  gCANRxObj.msgobj = 1;
+  gCANRxObj.mode_id = 0x0000000FUL;
+  gCANRxObj.mask = 0x00000000UL;
+  gCANRxObj.dlc = 8;
+  LPC_CCAN_API->config_rxmsgobj(&gCANRxObj);
 }
