@@ -64,9 +64,6 @@ void CAN_IRQHandler(void) {
  LPC_CCAN_API->isr();
 }
 
-
-
-
 /* INIT CAN */
 void CAN_init(void)
 {

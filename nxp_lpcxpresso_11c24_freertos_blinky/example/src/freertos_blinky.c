@@ -51,6 +51,16 @@
  * Private functions
  ****************************************************************************/
 
+//void HardFault_Handler(void)
+//{
+//
+//}
+//
+//void IntDefaultHandler(void)
+//{
+//
+//}
+
 // init
 static void prvSetupHardware(void)
 {
@@ -59,7 +69,7 @@ static void prvSetupHardware(void)
 	Board_LED_Set(0, false);
 
 	CAN_init();
-	uart_init();
+//	uart_init();
 }
 
 static void blinkLed(void *pvParameters)
@@ -79,9 +89,10 @@ static void blinkLed(void *pvParameters)
 		ledState = (bool)!ledState;
 		puts(my_message);
 //		uart_transmit();
-		uart_send_msg(my_message);
+//		uart_send_msg(my_message);
+		Board_UARTPutSTR(my_message);
 
-		vTaskDelay(configTICK_RATE_HZ * 2);
+		vTaskDelay(configTICK_RATE_HZ * 1);
 	}
 }
 
@@ -101,7 +112,7 @@ static void transmitPeriodic(void *pvParameters)
 
 	for(;;)
 	{
-//		LPC_CCAN_API->can_transmit(&msg_obj);
+		LPC_CCAN_API->can_transmit(&msg_obj);
 		vTaskDelay(configTICK_RATE_HZ * 2);
 	}
 }
@@ -126,9 +137,15 @@ int main(void)
 	/* Send initial messages */
 	puts("Start scheduler");
 
+	Board_LED_Set(0, true);
+
 	/* Start the scheduler */
 	vTaskStartScheduler();
 
+	while(1)
+	{
+		;
+	}
 
 	// should never arrive here
 	return 1;
