@@ -37,7 +37,7 @@
 #include "task.h"
 
 #include "can.h"
-#include "uart_drv.h"
+#include "data_monitor.h"
 
 /*****************************************************************************
  * Private types/enumerations/variables
@@ -69,28 +69,31 @@ static void prvSetupHardware(void)
 	Board_LED_Set(0, false);
 
 	CAN_init();
-//	uart_init();
+	init_database();
 }
 
 static void blinkLed(void *pvParameters)
 {
 	bool ledState = false;
-	int my_count = 0u;
+//	int my_count = 0u;
 	char my_message[15];
 	for(;;)
 	{
-		my_count ++;
-		if (my_count > 9)
-		{
-			my_count = 0;
-		}
-		sprintf(my_message, "Hello %d\r\n", my_count);
+//		my_count ++;
+//		if (my_count > 9)
+//		{
+//			my_count = 0;
+//		}
+
+		sprintf(my_message, "Hello %d\r\n", get_sensor_value(DB_ID_Temperature));
 		Board_LED_Set(0, ledState);
 		ledState = (bool)!ledState;
 		puts(my_message);
 //		uart_transmit();
 //		uart_send_msg(my_message);
 		Board_UARTPutSTR(my_message);
+
+
 
 		vTaskDelay(configTICK_RATE_HZ * 1);
 	}
@@ -110,9 +113,18 @@ static void transmitPeriodic(void *pvParameters)
     msg_obj.data[2] = 'S';    // 0x53
     msg_obj.data[3] = 'T';    // 0x54
 
+    static uint8_t test_value = 0;
+
 	for(;;)
 	{
+		test_value ++;
+		if (test_value > 9u )
+		{
+			test_value = 0u;
+		}
 		LPC_CCAN_API->can_transmit(&msg_obj);
+
+		update_database(CAN_ID_Temperature, test_value);
 		vTaskDelay(configTICK_RATE_HZ * 2);
 	}
 }
@@ -127,11 +139,11 @@ int main(void)
 	prvSetupHardware();
 
 	xTaskCreate(blinkLed, (signed char *) "blinkLed",
-				configMINIMAL_STACK_SIZE + 100, NULL, (tskIDLE_PRIORITY + 1UL),
+				configMINIMAL_STACK_SIZE + 80, NULL, (tskIDLE_PRIORITY + 1UL),
 				(xTaskHandle *) NULL);
 
 	xTaskCreate(transmitPeriodic, (signed char *) "periodicCanTransmit",
-				configMINIMAL_STACK_SIZE, NULL, (tskIDLE_PRIORITY + 1UL),
+				configMINIMAL_STACK_SIZE + 30, NULL, (tskIDLE_PRIORITY + 1UL),
 				(xTaskHandle *) NULL);
 
 	/* Send initial messages */
