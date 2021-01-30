@@ -55,7 +55,7 @@ void CAN_rx(uint8_t msg_obj_num) {
  update_database((CAN_ID_MAPP)(msg_obj.mode_id) , msg_obj.data);
 
  // where is this suppose to be called
- puts((char*)(msg_obj.data));
+ puts((msg_obj.data));
  LPC_CCAN_API->config_rxmsgobj(&gCANRxObj);
  }
 }

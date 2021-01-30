@@ -37,19 +37,44 @@ static void blinkLed(void *pvParameters)
 {
 	bool ledState = false;
 	char my_message[30];
+
+	uint8_t what_to_send_cnt = 0u;
 	for(;;)
 	{
 //		sprintf(my_message, "Hello world\r\n");
 
-		get_sensor_(DB_ID_Uart_messages, my_message);
+		if (what_to_send_cnt == 0u)
+		{
+			get_sensor_(DB_ID_Uart_messages, my_message);
+			Board_UARTPutSTR(my_message);
+
+			get_sensor_(DB_ID_Temperature, my_message);
+			Board_UARTPutSTR(my_message);
+
+		}
+		else if (what_to_send_cnt == 1u)
+		{
+			get_sensor_(DB_ID_Buttons_potentiometer, my_message);
+			Board_UARTPutSTR(my_message);
+		}
+		else if(what_to_send_cnt == 2u)
+		{
+			get_sensor_(DB_ID_Humidity_sensor, my_message);
+			Board_UARTPutSTR(my_message);
+		}
+		else
+		{
+			get_sensor_(DB_ID_Proximity_sensor, my_message);
+			Board_UARTPutSTR(my_message);
+		}
 		Board_LED_Set(0, ledState);
 		ledState = (bool)!ledState;
 
-		puts(my_message);
+		what_to_send_cnt ++;
+		what_to_send_cnt = what_to_send_cnt % 4;
+		puts("Loop done");
+		vTaskDelay(300 * 1);
 
-		Board_UARTPutSTR(my_message);
-
-		vTaskDelay(configTICK_RATE_HZ * 1);
 	}
 }
 
@@ -80,24 +105,24 @@ static void transmitPeriodic(void *pvParameters)
 		}
 //		LPC_CCAN_API->can_transmit(&msg_obj);
 
-		send_TEMP_val_over_CAN(2u);
-		vTaskDelay(configTICK_RATE_HZ);
-
-		send_HUMIDITY_val_over_CAN(100u);
-		vTaskDelay(configTICK_RATE_HZ);
-
-		send_PROXIMITY_val_over_CAN(130u);
-		vTaskDelay(configTICK_RATE_HZ);
-
-		send_UART_msg_over_CAN("heya\r\n", strlen("heya\r\n"));
-		vTaskDelay(configTICK_RATE_HZ);
-
-		send_buttons_potentiometer_over_CAN(true, false, 250u);
-		vTaskDelay(configTICK_RATE_HZ);
-
-
+//		send_TEMP_val_over_CAN(2u);
+//		vTaskDelay(configTICK_RATE_HZ);
+//
+//		send_HUMIDITY_val_over_CAN(100u);
+//		vTaskDelay(configTICK_RATE_HZ);
+//
+//		send_PROXIMITY_val_over_CAN(130u);
+//		vTaskDelay(configTICK_RATE_HZ);
+//
+//		send_UART_msg_over_CAN("heya\r\n", strlen("heya\r\n"));
+//		vTaskDelay(configTICK_RATE_HZ);
+//
+//		send_buttons_potentiometer_over_CAN(true, false, 250u);
+//		vTaskDelay(configTICK_RATE_HZ);
+//
+//
 //		update_database(CAN_ID_Temperature, test_value);
-//		update_database(CAN_ID_Uart_messages, (uint8_t*)("sadasda"));
+		update_database(CAN_ID_Uart_messages, (uint8_t*)("sadasda\n"));
 		vTaskDelay(configTICK_RATE_HZ * 3);
 	}
 }

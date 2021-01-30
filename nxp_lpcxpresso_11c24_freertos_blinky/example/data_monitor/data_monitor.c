@@ -75,23 +75,25 @@ static uint8_t* get_sensor_value(SENSOR_ID_MAPP sensor_id)
 void get_sensor_ (SENSOR_ID_MAPP sensor_id, char sensor_state[30])
 {
 	uint8_t* sensor_value = get_sensor_value(sensor_id);
+	memset(sensor_state, 0, 30);
+	sensor_state[0] = '\0';
 	switch(sensor_id)
 	{
 	case DB_ID_Temperature:
-		sprintf(sensor_state, "Temp=%u\r\n", sensor_value[0]);
+		sprintf(sensor_state, "Temp=%u\n", sensor_value[0]);
 		break;
 	case DB_ID_Uart_messages:
-		sprintf(sensor_state, "%s\r\n", sensor_value);
+		sprintf(sensor_state, "%s", sensor_value);
 		break;
 	case DB_ID_Buttons_potentiometer:
-		sprintf(sensor_state, "B1=%u  B2=%u \r\n Potmeter = %u\r\n", (uint8_t)(sensor_value[2]& 0x01),(uint8_t)(sensor_value[2]& 0x02),
+		sprintf(sensor_state, "B1=%u  B2=%u \n PotMtr = %u\n", (uint8_t)(sensor_value[2]& 0x01),(uint8_t)(sensor_value[2]& 0x02),
 				                                                    sensor_value[3]);
 		break;
 	case DB_ID_Humidity_sensor:
-		sprintf(sensor_state, "Humidity = %u\r\n", sensor_value[4]);
+		sprintf(sensor_state, "Humidity = %u\n", sensor_value[4]);
 		break;
 	case DB_ID_Proximity_sensor:
-		sprintf(sensor_state, "Proximity = %u\r\n", sensor_value[0]);
+		sprintf(sensor_state, "Proximity = %u\n", sensor_value[0]);
 		break;
 	default:
 		break;
