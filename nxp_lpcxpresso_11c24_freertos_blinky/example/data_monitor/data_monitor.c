@@ -190,5 +190,6 @@ void init_database()
 	for(uint8_t i= 0 ; i < sizeof(inst_sensor_database)/sizeof(inst_sensor_database[0]); i++)
 	{
 		inst_sensor_database[i].sensor_id = 0u;
+		memset(inst_sensor_database[i].sensor_value, 1, 8);
 	}
 }

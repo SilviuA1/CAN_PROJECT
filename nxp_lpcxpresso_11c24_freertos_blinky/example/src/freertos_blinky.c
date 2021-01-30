@@ -48,9 +48,6 @@ static void blinkLed(void *pvParameters)
 			get_sensor_(DB_ID_Uart_messages, my_message);
 			Board_UARTPutSTR(my_message);
 
-			get_sensor_(DB_ID_Temperature, my_message);
-			Board_UARTPutSTR(my_message);
-
 		}
 		else if (what_to_send_cnt == 1u)
 		{
@@ -62,6 +59,11 @@ static void blinkLed(void *pvParameters)
 			get_sensor_(DB_ID_Humidity_sensor, my_message);
 			Board_UARTPutSTR(my_message);
 		}
+		else if(what_to_send_cnt == 3u)
+		{
+			get_sensor_(DB_ID_Temperature, my_message);
+			Board_UARTPutSTR(my_message);
+		}
 		else
 		{
 			get_sensor_(DB_ID_Proximity_sensor, my_message);
@@ -71,8 +73,9 @@ static void blinkLed(void *pvParameters)
 		ledState = (bool)!ledState;
 
 		what_to_send_cnt ++;
-		what_to_send_cnt = what_to_send_cnt % 4;
-		puts("Loop done");
+		what_to_send_cnt = what_to_send_cnt % 5;
+		puts("-----");
+		puts(my_message);
 		vTaskDelay(300 * 1);
 
 	}
@@ -80,17 +83,6 @@ static void blinkLed(void *pvParameters)
 
 static void transmitPeriodic(void *pvParameters)
 {
-	CCAN_MSG_OBJ_T msg_obj;
-
-    /* Send a simple one time CAN message */
-    msg_obj.msgobj  = 2;
-    msg_obj.mode_id = 0x345;
-    msg_obj.mask    = 0x7F0;
-    msg_obj.dlc     = 4;
-    msg_obj.data[0] = 'T';    // 0x54
-    msg_obj.data[1] = '3';    // 0x45
-    msg_obj.data[2] = 'S';    // 0x53
-    msg_obj.data[3] = 'T';    // 0x54
 
     static uint8_t test_value[8];
     int i = 0;
@@ -122,7 +114,7 @@ static void transmitPeriodic(void *pvParameters)
 //
 //
 //		update_database(CAN_ID_Temperature, test_value);
-		update_database(CAN_ID_Uart_messages, (uint8_t*)("sadasda\n"));
+//		update_database(CAN_ID_Uart_messages, (uint8_t*)("sadasda\n"));
 		vTaskDelay(configTICK_RATE_HZ * 3);
 	}
 }
