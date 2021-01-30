@@ -58,12 +58,12 @@ static void transmitPeriodic(void *pvParameters)
 	CCAN_MSG_OBJ_T msg_obj;
 
     /* Send a simple one time CAN message */
-    msg_obj.msgobj  = 0;
+    msg_obj.msgobj  = 2;
     msg_obj.mode_id = 0x345;
     msg_obj.mask    = 0x7F0;
     msg_obj.dlc     = 4;
     msg_obj.data[0] = 'T';    // 0x54
-    msg_obj.data[1] = 'E';    // 0x45
+    msg_obj.data[1] = '3';    // 0x45
     msg_obj.data[2] = 'S';    // 0x53
     msg_obj.data[3] = 'T';    // 0x54
 
@@ -78,11 +78,27 @@ static void transmitPeriodic(void *pvParameters)
 		{
 			test_value[i] = 0u;
 		}
-		LPC_CCAN_API->can_transmit(&msg_obj);
+//		LPC_CCAN_API->can_transmit(&msg_obj);
+
+		send_TEMP_val_over_CAN(2u);
+		vTaskDelay(configTICK_RATE_HZ);
+
+		send_HUMIDITY_val_over_CAN(100u);
+		vTaskDelay(configTICK_RATE_HZ);
+
+		send_PROXIMITY_val_over_CAN(130u);
+		vTaskDelay(configTICK_RATE_HZ);
+
+		send_UART_msg_over_CAN("heya\r\n", strlen("heya\r\n"));
+		vTaskDelay(configTICK_RATE_HZ);
+
+		send_buttons_potentiometer_over_CAN(true, false, 250u);
+		vTaskDelay(configTICK_RATE_HZ);
+
 
 //		update_database(CAN_ID_Temperature, test_value);
-		update_database(CAN_ID_Uart_messages, (uint8_t*)("sadasda"));
-		vTaskDelay(configTICK_RATE_HZ * 2);
+//		update_database(CAN_ID_Uart_messages, (uint8_t*)("sadasda"));
+		vTaskDelay(configTICK_RATE_HZ * 3);
 	}
 }
 

@@ -51,12 +51,13 @@ void CAN_rx(uint8_t msg_obj_num) {
 //  msg_obj.mode_id += 0x100;
 //  LPC_CCAN_API->can_transmit(&msg_obj);
 // }
-
+ if (msg_obj_num == 1) {
  update_database((CAN_ID_MAPP)(msg_obj.mode_id) , msg_obj.data);
 
  // where is this suppose to be called
  puts((char*)(msg_obj.data));
  LPC_CCAN_API->config_rxmsgobj(&gCANRxObj);
+ }
 }
 
 /* CAN transmit callback */
@@ -69,7 +70,9 @@ void CAN_tx(uint8_t msg_obj_num) {
 /* CAN error callback */
 /* Function is executed by the Callback handler after
     an error has occured on the CAN bus */
-void CAN_error(uint32_t error_info) {}
+void CAN_error(uint32_t error_info) {
+	puts("ERROR CALLBACK");
+}
 
 void CAN_IRQHandler(void) {
  LPC_CCAN_API->isr();

@@ -26,3 +26,13 @@ void update_database(CAN_ID_MAPP can_message_id, uint8_t sensor_value[8]);
 void get_sensor_ (SENSOR_ID_MAPP sensor_id, char sensor_state[30]);
 
 void init_database();
+
+
+void send_TEMP_val_over_CAN(uint8_t sensor_val);
+void send_HUMIDITY_val_over_CAN(uint8_t sensor_val);
+void send_PROXIMITY_val_over_CAN(uint8_t sensor_val);
+void send_UART_msg_over_CAN(char uart_message[8], uint8_t msg_len);
+void send_buttons_potentiometer_over_CAN(bool button1, bool button2, uint8_t potentiometer);
+
+
+

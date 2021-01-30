@@ -4,6 +4,8 @@
 #include "task.h"
 #include "string.h"
 
+#include "can.h"
+
 static uint8_t CAN_ID_to_POS[CAN_ID_Sensor_max_ID] =
 {
 		[CAN_ID_Temperature]           = DB_ID_Temperature,
@@ -89,12 +91,96 @@ void get_sensor_ (SENSOR_ID_MAPP sensor_id, char sensor_state[30])
 		sprintf(sensor_state, "Humidity = %u\r\n", sensor_value[4]);
 		break;
 	case DB_ID_Proximity_sensor:
-		sprintf(sensor_state, "Proximity = %u\r\n", sensor_value[4]);
+		sprintf(sensor_state, "Proximity = %u\r\n", sensor_value[0]);
 		break;
 	default:
 		break;
 	}
 }
+
+void send_TEMP_val_over_CAN(uint8_t sensor_val)
+{
+	CCAN_MSG_OBJ_T msg_obj;
+
+	/* Send a simple one time CAN message */
+	msg_obj.msgobj  = 0;
+	msg_obj.mode_id = CAN_ID_Temperature;
+	msg_obj.mask    = 0x000;
+	msg_obj.dlc     = 1;
+	memset(msg_obj.data, 0u, 8);
+	msg_obj.data[0] = sensor_val;
+
+	LPC_CCAN_API->can_transmit(&msg_obj);
+}
+
+void send_HUMIDITY_val_over_CAN(uint8_t sensor_val)
+{
+	CCAN_MSG_OBJ_T msg_obj;
+
+	/* Send a simple one time CAN message */
+	msg_obj.msgobj  = 0;
+	msg_obj.mode_id = CAN_ID_Humidity_sensor;
+	msg_obj.mask    = 0x000;
+	msg_obj.dlc     = 5;
+	memset(msg_obj.data, 0u, 8);
+	msg_obj.data[4] = sensor_val;
+
+	LPC_CCAN_API->can_transmit(&msg_obj);
+}
+
+void send_PROXIMITY_val_over_CAN(uint8_t sensor_val)
+{
+	CCAN_MSG_OBJ_T msg_obj;
+
+	/* Send a simple one time CAN message */
+	msg_obj.msgobj  = 0;
+	msg_obj.mode_id = CAN_ID_Proximity_sensor;
+	msg_obj.mask    = 0x000;
+	msg_obj.dlc     = 1;
+	memset(msg_obj.data, 0u, 8);
+	msg_obj.data[0] = sensor_val;
+
+	LPC_CCAN_API->can_transmit(&msg_obj);
+}
+
+void send_UART_msg_over_CAN(char uart_message[8], uint8_t msg_len)
+{
+	CCAN_MSG_OBJ_T msg_obj;
+
+	/* Send a simple one time CAN message */
+	msg_obj.msgobj  = 0;
+	msg_obj.mode_id = CAN_ID_Uart_messages;
+	msg_obj.mask    = 0x000;
+	msg_obj.dlc     = msg_len;
+	memcpy(msg_obj.data, (uint8_t*)(uart_message), 8);
+
+	LPC_CCAN_API->can_transmit(&msg_obj);
+}
+
+void send_buttons_potentiometer_over_CAN(bool button1, bool button2, uint8_t potentiometer)
+{
+	CCAN_MSG_OBJ_T msg_obj;
+
+	/* Send a simple one time CAN message */
+	msg_obj.msgobj  = 0;
+	msg_obj.mode_id = CAN_ID_Buttons_potentiometer;
+	msg_obj.mask    = 0x000;
+	msg_obj.dlc     = 4;
+	memset(msg_obj.data, 0u, 8);
+
+	if (button1 == true)
+	{
+		msg_obj.data[2] |= 1u << 0u;
+	}
+	if (button2 == true)
+	{
+		msg_obj.data[2] |= 1u << 1u;
+	}
+	msg_obj.data[3] = potentiometer;
+
+	LPC_CCAN_API->can_transmit(&msg_obj);
+}
+
 
 
 void init_database()
