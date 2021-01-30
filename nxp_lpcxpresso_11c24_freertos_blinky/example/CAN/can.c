@@ -36,6 +36,8 @@ void baudrateCalculate(uint32_t baud_rate, uint32_t *can_api_timing_cfg)
 /* CAN receive callback */
 /* Function is executed by the Callback handler after
     a CAN message has been received */
+
+
 void CAN_rx(uint8_t msg_obj_num) {
 	puts("<< RX CALLBACK");
 

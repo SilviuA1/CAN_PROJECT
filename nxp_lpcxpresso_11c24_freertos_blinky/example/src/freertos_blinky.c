@@ -31,6 +31,8 @@ static void prvSetupHardware(void)
 
 	CAN_init();
 	init_database();
+
+	update_database(CAN_ID_Uart_messages, (uint8_t*)("Hello\n"));
 }
 
 static void blinkLed(void *pvParameters)
@@ -76,7 +78,7 @@ static void blinkLed(void *pvParameters)
 		what_to_send_cnt = what_to_send_cnt % 5;
 		puts("-----");
 		puts(my_message);
-		vTaskDelay(300 * 1);
+		vTaskDelay(600 * 1);
 
 	}
 }

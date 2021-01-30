@@ -86,7 +86,7 @@ void get_sensor_ (SENSOR_ID_MAPP sensor_id, char sensor_state[30])
 		sprintf(sensor_state, "%s", sensor_value);
 		break;
 	case DB_ID_Buttons_potentiometer:
-		sprintf(sensor_state, "B1=%u  B2=%u \n PotMtr = %u\n", (uint8_t)(sensor_value[2]& 0x01),(uint8_t)(sensor_value[2]& 0x02),
+		sprintf(sensor_state, "B1=%u B2=%u PM=%u\n", (uint8_t)(sensor_value[2]& 0x01),(uint8_t)(sensor_value[2]& 0x02),
 				                                                    sensor_value[3]);
 		break;
 	case DB_ID_Humidity_sensor:
