@@ -22,7 +22,7 @@ typedef enum
 }SENSOR_ID_MAPP;
 
 
-void update_database(CAN_ID_MAPP can_message_id, uint8_t sensor_value);
-uint8_t get_sensor_value(SENSOR_ID_MAPP sensor_id);
+void update_database(CAN_ID_MAPP can_message_id, uint8_t sensor_value[8]);
+void get_sensor_ (SENSOR_ID_MAPP sensor_id, char sensor_state[30]);
 
 void init_database();

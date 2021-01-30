@@ -1,5 +1,7 @@
 #include "can.h"
 
+#include "data_monitor.h"
+
 CCAN_MSG_OBJ_T msg_obj;
 CCAN_MSG_OBJ_T gCANRxObj;
 
@@ -41,15 +43,19 @@ void CAN_rx(uint8_t msg_obj_num) {
  msg_obj.msgobj = msg_obj_num;
  /* Now load up the msg_obj structure with the CAN message */
  LPC_CCAN_API->can_receive(&msg_obj);
- if (msg_obj_num == 1) {
-  /* Simply transmit CAN frame (echo) with with ID +0x100 via buffer 2 */
-  msg_obj.msgobj = 2;
-  msg_obj.mode_id += 0x100;
-  LPC_CCAN_API->can_transmit(&msg_obj);
- }
+
+//
+// if (msg_obj_num == 1) {
+//  /* Simply transmit CAN frame (echo) with with ID +0x100 via buffer 2 */
+//  msg_obj.msgobj = 2;
+//  msg_obj.mode_id += 0x100;
+//  LPC_CCAN_API->can_transmit(&msg_obj);
+// }
+
+ update_database((CAN_ID_MAPP)(msg_obj.mode_id) , msg_obj.data);
 
  // where is this suppose to be called
-
+ puts((char*)(msg_obj.data));
  LPC_CCAN_API->config_rxmsgobj(&gCANRxObj);
 }
 
