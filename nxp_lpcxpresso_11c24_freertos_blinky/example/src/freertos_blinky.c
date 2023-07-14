@@ -7,9 +7,6 @@
 #include "FreeRTOS.h"
 #include "task.h"
 
-#include "can.h"
-#include "data_monitor.h"
-
 /*****************************************************************************
  * Private types/enumerations/variables
  ****************************************************************************/
@@ -29,10 +26,11 @@ static void prvSetupHardware(void)
 	Board_Init();
 	Board_LED_Set(0, false);
 
-	CAN_init();
-	init_database();
+}
 
-	update_database(CAN_ID_Uart_messages, (uint8_t*)("Hello\n"));
+static void setupPinout(void)
+{
+	Chip_GPIO_SetPinDIR(LPC_GPIO,3,2,1); // set LPC group 3 pin 2 to output.
 }
 
 static void blinkLed(void *pvParameters)
@@ -41,6 +39,7 @@ static void blinkLed(void *pvParameters)
 	for(;;)
 	{
 		Board_LED_Set(0, ledState);
+		Chip_GPIO_SetPinState(LPC_GPIO, 3, 2, ledState);
 		ledState = (bool)!ledState;
 		puts("blindLed task loop");
 
@@ -57,6 +56,7 @@ static void blinkLed(void *pvParameters)
 int main(void)
 {
 	prvSetupHardware();
+	setupPinout();
 
 	xTaskCreate(blinkLed, (signed char *) "blinkLed",
 				configMINIMAL_STACK_SIZE + 80, NULL, (tskIDLE_PRIORITY + 1UL),
